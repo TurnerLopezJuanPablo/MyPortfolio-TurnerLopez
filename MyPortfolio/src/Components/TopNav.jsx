@@ -4,6 +4,7 @@ import { useState, useEffect, useRef } from 'react'
 
 function TopNav() {
   const [isNavOpen, setIsNavOpen] = useState(false)
+  console.log(`isNavOpen`, isNavOpen)
 
   const menuIconRef = useRef(null)
 

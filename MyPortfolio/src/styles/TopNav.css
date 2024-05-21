@@ -65,7 +65,7 @@ a:hover {
     }
 
     .sidenav a {
-        flex-grow: 1;
+        text-align: center;
         display: block;
         margin-bottom: 2rem;
     }
