@@ -1,0 +1,15 @@
+.title-icon {
+    display: flex;
+    align-items: center;
+
+    padding-left: 2rem;
+}
+
+.title-icon img {
+    height: 36px;
+}
+
+.children {
+    display: grid;
+    place-items: center;
+}

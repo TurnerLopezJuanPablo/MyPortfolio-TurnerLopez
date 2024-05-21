@@ -1,0 +1,19 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+  h2 {
+    padding-left: 1rem;
+  }
+
+:target {
+  scroll-margin-top: 60px;
+}
+
+@media screen and (max-width: 1000px) {
+  :target {
+    scroll-margin-top: 0;
+  }
+}
