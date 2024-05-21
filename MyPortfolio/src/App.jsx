@@ -11,6 +11,10 @@ import { Contact } from './Components/Contact'
 import { Code } from './Components/Code'
 
 function App() {
+
+  // Erase later
+  alert('Important! This project is under development...')
+
   return (
     <>
       <TopNav />
