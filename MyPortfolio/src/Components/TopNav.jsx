@@ -3,7 +3,7 @@ import '../styles/TopNav.css'
 import { useState, useEffect, useRef } from 'react'
 
 function TopNav() {
-  const [isNavOpen, setIsNavOpen] = useState(false)
+  const [isNavOpen, setIsNavOpen] = useState(true)
   console.log(`isNavOpen`, isNavOpen)
 
   const menuIconRef = useRef(null)
