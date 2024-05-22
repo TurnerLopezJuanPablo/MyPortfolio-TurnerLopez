@@ -1,15 +1,26 @@
 .title-icon {
     display: flex;
     align-items: center;
-
-    padding-left: 2rem;
 }
 
 .title-icon img {
     height: 36px;
+
+    padding: 0 1.5rem;
 }
 
 .children {
-    display: grid;
-    place-items: center;
+    margin: 1rem 3rem;
+}
+
+@media screen and (max-width: 800px) {
+    .children {
+        margin: 1rem 2rem;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .children {
+        margin: 1rem;
+    }
 }

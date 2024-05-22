@@ -15,11 +15,9 @@
 
 body {
   margin: 40px auto;
-  min-height: 120vh;
+  min-height: 100vh;
 
   max-width: 1280px;
-  min-width: 320px;
-
   overflow-x: hidden;
 }
 

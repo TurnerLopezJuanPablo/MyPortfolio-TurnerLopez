@@ -4,10 +4,6 @@
   padding: 2rem;
 }
 
-  h2 {
-    padding-left: 1rem;
-  }
-
 :target {
   scroll-margin-top: 60px;
 }
@@ -15,5 +11,17 @@
 @media screen and (max-width: 1000px) {
   :target {
     scroll-margin-top: 0;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  #root {
+    padding: 1rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  #root {
+    padding: 0.5rem;
   }
 }
