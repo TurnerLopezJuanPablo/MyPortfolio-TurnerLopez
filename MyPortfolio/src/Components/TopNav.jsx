@@ -12,6 +12,8 @@ function TopNav() {
 
   const handleClick = () => {
     isNavOpen ? closeNav() : openNav()
+
+    console.log(document.querySelector('.container'))
   }
 
   function openNav() {
@@ -24,16 +26,20 @@ function TopNav() {
     setIsNavOpen(false)
   }
 
+  const handleClick2 = () => {
+    closeNav()
+  }
+
   return (
     <>
       <div className="header sidenav" id="sidenav">
-        <a href='#presentation'>Presentacion</a>
-        <a href='#aboutMe'>Sobre Mi</a>
-        <a href='#studies'>Estudios</a>
-        <a href='#skills'>Habilidades</a>
-        <a href='#projects'>Proyectos</a>
-        <a href='#contact'>Contacto</a>
-        <a href='#code'>Codigo</a>
+        <a href='#presentation' onClick={handleClick2}>Presentacion</a>
+        <a href='#aboutMe' onClick={handleClick2}>Sobre Mi</a>
+        <a href='#studies' onClick={handleClick2}>Estudios</a>
+        <a href='#skills' onClick={handleClick2}>Habilidades</a>
+        <a href='#projects' onClick={handleClick2}>Proyectos</a>
+        <a href='#contact' onClick={handleClick2}>Contacto</a>
+        <a href='#code' onClick={handleClick2}>Codigo</a>
       </div>
 
       <div className="container" id='menuIcon' onClick={handleClick} ref={menuIconRef}>
