@@ -42,7 +42,7 @@ function TopNav() {
         <a href='#code' onClick={handleClick2}>Codigo</a>
       </div>
 
-      <div className="container" id='menuIcon' onClick={handleClick} ref={menuIconRef}>
+      <div className="container change" id='menuIcon' onClick={handleClick} ref={menuIconRef}>
         <div className="bar1"></div>
         <div className="bar2"></div>
         <div className="bar3"></div>
