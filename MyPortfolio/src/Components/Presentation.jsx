@@ -1,20 +1,32 @@
 import '../styles/Presentation.css'
-import computerIllustration from '../../public/computer-illustration.png'
+import computerIllustration from '../assets/computer-illustration.png'
 import locationIcon from '../assets/icons8-location-48.png'
 
 import { useEffect, useState } from 'react'
-
-import Section from "../Section"
 
 export const Presentation = () => {
   const fullName = 'Juan Pablo, Turner Lopez'
   const [displayedText, setDisplayedText] = useState(fullName.split(''))
   const [isFull, setIsFull] = useState(true)
 
+  const [isWritting, setIsWritting] = useState(true)
+
+  const handleClick = () => {
+    setIsWritting(!isWritting)
+  }
+
+  const [start, setStart] = useState(false)
+
+  setTimeout(() => {
+    setStart(true)
+  }, 3000)
+
   useEffect(() => {
-    isFull ? clearText(displayedText) : writeText('')
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [isFull])
+    if (start) {
+      isFull ? clearText(displayedText) : writeText('')
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isFull, start])
 
   function clearText(text) {
     if (text.length > 0) {
@@ -55,45 +67,64 @@ export const Presentation = () => {
       }
     }
 
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isFull, displayedText])
 
   function getRandomNumber() {
-    return Math.floor(Math.random() * (280 - 180 + 1)) + 180
+    return Math.floor(Math.random() * (250 - 180 + 1)) + 180
   }
 
   // The name should be 'show|' but idk what's the name of that thing
   const [show, setShow] = useState(false)
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setShow(prevShow => !prevShow)
-    }, 400)
+    if (start) {
+      const interval = setInterval(() => {
+        setShow(prevShow => !prevShow)
+      }, 400)
 
-    return () => clearInterval(interval)
-  }, [])
+      return () => clearInterval(interval)
+    }
+  }, [start])
 
   return (
-    <Section idSection='presentation' title='Presentación' iconRoute='presentationIcon'>
-      <h1 className='presentation-title'>
-        <span className='presentation-span'>a</span>{displayedText}{show ? '|' : ''}
-      </h1>
+    <section id='presentation'>
+      <div className='presentation-mainDiv'>
+        <h1 className='presentation-title'>
+          <span className='presentation-span'>.</span>
+          {isWritting ? (
+            <>
+              {displayedText}
+              {show ? '|' : ''}
+            </>
+          ) : (
+            fullName
+          )}
+        </h1>
+      </div>
+
       <div className='presentation-section'>
         <div>
           <h2 className='presentation-subTitle'>
-            <li>Analista de Sistemas</li>
-            <li>Fullstack Developer</li>
+            <p>💻 Analista de Sistemas</p>
+            <p>🔥 Fullstack Developer</p>
+            <p>🤔 Explorando nuevas tecnologías</p>
           </h2>
+
           <h3 className='presentation-h3'>
             <img src={locationIcon} alt='Location Icon'></img>
             Buenos Aires - Argentina.
           </h3>
+
+          <div className='presentation-btn-div'>
+            <button type='button' className='presentation-button' onClick={handleClick}>{!isWritting ? 'Activar' : 'Desactivar'} escritura de texto</button>
+          </div>
         </div>
 
         <div>
-          <img src={computerIllustration} alt='Computer Illustration'></img>
+          <img src={computerIllustration} alt='Computer Illustration' className='presentation-img'></img>
         </div>
       </div>
-    </Section>
+    </section >
   )
 }

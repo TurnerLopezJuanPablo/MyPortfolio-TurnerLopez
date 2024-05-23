@@ -1,0 +1,79 @@
+.aboutMe-flex {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+    gap: 3rem;
+}
+
+.aboutMe-myPhoto {
+    height: 440px;
+    border-radius: 20px;
+    filter: drop-shadow(0 0 0.5rem rgb(56, 56, 56));
+}
+
+.aboutMe-dots {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+    margin-top: 2rem;
+}
+
+.aboutMe-color-1 {
+    color: #9775FA;
+}
+
+.aboutMe-color-1.hover {
+    filter: drop-shadow(0 0 10px #9775FA);
+}
+
+.aboutMe-color-2 {
+    color: #69DB7C;
+}
+
+.aboutMe-color-2.hover {
+    filter: drop-shadow(0 0 10px #69db7c);
+}
+
+.aboutMe-color-3 {
+    color: #FFD43B;
+}
+
+.aboutMe-color-3.hover {
+    filter: drop-shadow(0 0 10px #ffd53b);
+}
+
+.aboutMe-color-1,
+.aboutMe-color-2,
+.aboutMe-color-3,
+.hover {
+    transition: 200ms;
+}
+
+
+@media screen and (max-width: 1100px) {
+
+    .aboutMe-div-p p,
+    .aboutMe-div-p li {
+        font-size: 0.8rem;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+
+    .aboutMe-div-p p,
+    .aboutMe-div-p li {
+        font-size: 0.7rem;
+    }
+}
+
+@media screen and (max-width: 750px) {
+    .aboutMe-flex {
+        flex-wrap: wrap;
+    }
+
+    .aboutMe-myPhoto {
+        height: 320px;
+    }
+}

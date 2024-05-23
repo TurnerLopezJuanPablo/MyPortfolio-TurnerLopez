@@ -1,18 +1,24 @@
 .presentation-section {
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
+}
+
+.presentation-mainDiv {
+    width: 80%;
+    margin: 0 auto;
 }
 
 .presentation-title {
     color: white;
     font-size: 3rem;
-    margin: 2rem 0;
-    padding-left: 8rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
 }
 
 .presentation-span {
     color: #242424;
+    user-select: none;
 }
 
 .presentation-subTitle {
@@ -20,8 +26,9 @@
     margin: 0 !important;
 }
 
-div img {
+.presentation-img {
     height: 300px;
+    filter: drop-shadow(0 0 3rem rgb(56, 56, 56));
 }
 
 h3 img {
@@ -29,9 +36,96 @@ h3 img {
     padding-right: 0.3rem;
 }
 
+.presentation-h3 {
+    text-align: center;
+}
+
+.presentation-btn-div {
+    display: grid;
+    place-items: center;
+}
+
+.presentation-button {
+    padding: 1rem 2rem;
+    font-weight: bolder;
+    font-size: medium;
+    letter-spacing: 0.3px;
+    border-radius: 20px;
+
+    color: #d8d8d8;
+
+    border: 5px solid transparent;
+    animation: border-color-change 3s infinite;
+    background-clip: padding-box;
+
+    background-color: #202020;
+
+    transition: 300ms;
+}
+
+.presentation-button:hover {
+    cursor: pointer;
+    color: #ffffff;
+    background-color: #303030;
+    transition: 300ms;
+}
+
+h2 p {
+    margin: 0;
+}
+
+@keyframes border-color-change {
+    0% {
+        border-color: #7660B5;
+    }
+
+    25% {
+        border-color: #8A6BE3;
+    }
+
+    50% {
+        border-color: #B6A3ED;
+    }
+
+    75% {
+        border-color: #685C89;
+    }
+
+    100% {
+        border-color: #7660B5;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .presentation-mainDiv {
+        width: 85%;
+    }
+}
+
+@media screen and (max-width: 1100px) {
+    .presentation-mainDiv {
+        width: 90%;
+    }
+}
+
 @media screen and (max-width: 1000px) {
     div img {
         height: 200px;
+    }
+
+    .presentation-mainDiv {
+        width: 95%;
+    }
+
+    .presentation-title {
+        font-size: 2.85rem;
+        margin-bottom: 2rem;
+        text-align: center;
+    }
+
+    .presentation-button {
+        font-size: small;
+        border: 3px solid transparent;
     }
 }
 
@@ -43,12 +137,22 @@ h3 img {
         text-align: center;
     }
 
-    .presentation-title {
-        font-size: 2.5rem;
-    }
-
     div img {
         height: 300px;
+    }
+
+    .presentation-mainDiv {
+        width: 100%;
+    }
+
+    .presentation-title {
+        margin-top: 4rem;
+        font-size: 2.1rem;
+    }
+
+    .presentation-button {
+        margin-top: 0.6rem;
+        padding: 0.8rem 1.5rem;
     }
 }
 
@@ -58,7 +162,7 @@ h3 img {
     }
 
     .presentation-subTitle {
-        font-size: 1.3rem;
+        font-size: 1.2rem;
     }
 
     div img {
@@ -79,5 +183,9 @@ h3 img {
 @media screen and (max-width: 300px) {
     div img {
         height: 160px;
+    }
+
+    .presentation-subTitle {
+        font-size: 1rem;
     }
 }

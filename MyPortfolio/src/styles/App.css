@@ -25,3 +25,67 @@
     padding: 0.5rem;
   }
 }
+
+#myBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  border: none;
+  outline: none;
+  background-color: #7660B5;
+  color: white;
+  cursor: pointer;
+  padding: 0.6rem 1rem;
+  border-radius: 10px;
+  font-size: 2rem;
+
+  user-select: none;
+}
+
+.moveDown {
+  animation: moveDown 1s ease;
+}
+
+.moveUp {
+  animation: moveUp 1s ease;
+}
+
+
+#myBtn:hover {
+  background-color: #9775FA;
+}
+
+#myBtn,
+#myBtn:hover {
+  transition: 300ms;
+}
+
+@keyframes moveDown {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+
+  100% {
+    transform: translateY(110px);
+  }
+}
+
+@keyframes moveUp {
+  0% {
+    transform: translateY(110px);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}

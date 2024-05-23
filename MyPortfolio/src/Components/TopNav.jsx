@@ -26,7 +26,7 @@ function TopNav() {
 
   return (
     <>
-      <div className="header sidenav" id="sidenav" >
+      <div className="header sidenav" id="sidenav">
         <a href='#presentation'>Presentacion</a>
         <a href='#aboutMe'>Sobre Mi</a>
         <a href='#studies'>Estudios</a>

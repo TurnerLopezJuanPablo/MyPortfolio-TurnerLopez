@@ -1,12 +1,6 @@
-.title-icon {
-    display: flex;
-    align-items: center;
-}
-
-.title-icon img {
-    height: 36px;
-
-    padding: 0 1.5rem;
+.title {
+   text-align: center;
+   font-size: xx-large;
 }
 
 .children {
