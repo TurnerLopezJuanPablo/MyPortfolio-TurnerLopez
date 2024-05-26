@@ -46,7 +46,7 @@ function TopNav({ closeSideNav = false }) {
         <a href='#contact' onClick={handleClick2}>Contacto</a>
         <a href='#code' onClick={handleClick2}>Codigo</a>
 
-        <div className='sideNav-div bottom change' ref={sideNavRef}>
+        <div className='sideNav-div bottom' ref={sideNavRef}>
           <p>Portfolio - React APP</p>
           <p>My first React.JS Project - 2024</p>
         </div>
