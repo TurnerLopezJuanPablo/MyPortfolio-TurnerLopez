@@ -40,13 +40,47 @@ a:hover {
     transition: 300ms;
 }
 
+.sideNav-div {
+    padding: 0 1.2rem;
+    text-align: center;
+    font-size: 0.75rem;
+
+    transition: 1s;
+}
+
+.sideNav-div.change {
+    padding: 0;
+    transition: 350ms;
+    transform: translate(0, 200px);
+}
+
+.sideNav-div.bottom {
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 4.3rem;
+}
+
+@media screen and (max-height: 550px) {
+    .sideNav-div.bottom {
+        display: none !important;
+    }
+}
+
 @media screen and (min-width: 1000px) {
     .header {
         width: 100% !important;
     }
+
+    .sideNav-div {
+        display: none;
+    }
 }
 
 @media screen and (max-width: 1000px) {
+
+    .sideNav-div {
+        display: block;
+    }
 
     .sidenav {
         height: 100%;

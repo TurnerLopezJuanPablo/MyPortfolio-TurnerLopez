@@ -2,18 +2,19 @@ import '../styles/TopNav.css'
 
 import { useState, useEffect, useRef } from 'react'
 
-function TopNav() {
+// eslint-disable-next-line react/prop-types
+function TopNav({ closeSideNav = false }) {
   const [isNavOpen, setIsNavOpen] = useState(false)
   const menuIconRef = useRef(null)
+  const sideNavRef = useRef(null)
 
   useEffect(() => {
     if (menuIconRef.current) menuIconRef.current.classList.toggle("change")
+    if (sideNavRef.current) sideNavRef.current.classList.toggle("change")
   }, [isNavOpen, menuIconRef])
 
   const handleClick = () => {
     isNavOpen ? closeNav() : openNav()
-
-    console.log(document.querySelector('.container'))
   }
 
   function openNav() {
@@ -30,6 +31,10 @@ function TopNav() {
     closeNav()
   }
 
+  useEffect(() => {
+    closeNav()
+  }, [closeSideNav])
+
   return (
     <>
       <div className="header sidenav" id="sidenav">
@@ -40,6 +45,11 @@ function TopNav() {
         <a href='#projects' onClick={handleClick2}>Proyectos</a>
         <a href='#contact' onClick={handleClick2}>Contacto</a>
         <a href='#code' onClick={handleClick2}>Codigo</a>
+
+        <div className='sideNav-div bottom change' ref={sideNavRef}>
+          <p>Portfolio - React APP</p>
+          <p>My first React.JS Project - 2024</p>
+        </div>
       </div>
 
       <div className="container change" id='menuIcon' onClick={handleClick} ref={menuIconRef}>
@@ -48,7 +58,7 @@ function TopNav() {
         <div className="bar3"></div>
       </div>
     </>
-  );
+  )
 }
 
 export default TopNav;
