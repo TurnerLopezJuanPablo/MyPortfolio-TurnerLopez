@@ -3,14 +3,17 @@ import '../styles/TopNav.css'
 import { useState, useEffect, useRef } from 'react'
 
 // eslint-disable-next-line react/prop-types
-function TopNav({ closeSideNav = false }) {
+function TopNav() {
   const [isNavOpen, setIsNavOpen] = useState(false)
   const menuIconRef = useRef(null)
   const sideNavRef = useRef(null)
+  const divOverlay = useRef(null)
 
   useEffect(() => {
     if (menuIconRef.current) menuIconRef.current.classList.toggle("change")
     if (sideNavRef.current) sideNavRef.current.classList.toggle("change")
+
+    isNavOpen ? divOverlay.current.classList.add('show') :  divOverlay.current.classList.remove('show')
   }, [isNavOpen, menuIconRef])
 
   const handleClick = () => {
@@ -30,10 +33,6 @@ function TopNav({ closeSideNav = false }) {
   const handleClick2 = () => {
     closeNav()
   }
-
-  useEffect(() => {
-    closeNav()
-  }, [closeSideNav])
 
   return (
     <>
@@ -57,6 +56,8 @@ function TopNav({ closeSideNav = false }) {
         <div className="bar2"></div>
         <div className="bar3"></div>
       </div>
+
+      <div className='div-overlay' ref={divOverlay} onClick={closeNav}></div>
     </>
   )
 }

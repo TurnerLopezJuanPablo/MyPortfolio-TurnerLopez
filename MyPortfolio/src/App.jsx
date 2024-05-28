@@ -55,22 +55,11 @@ function App() {
     document.documentElement.scrollTop = 0
   }
 
-  const [closeNav, setCloseNav] = useState(false)
-
-  const handleClick = () => {
-    closeNavFunct()
-  }
-
-  function closeNavFunct() {
-    setCloseNav(!closeNav)
-    return closeNav
-  }
-
   return (
     <>
-      <TopNav closeSideNav={closeNav} />
+      <TopNav />
 
-      <main onClick={handleClick}>
+      <main>
         <Presentation />
         <AboutMe />
         <Studies />
@@ -79,6 +68,7 @@ function App() {
         <Contact />
         <Code />
       </main>
+      
       <button onClick={topFunction} id="myBtn" title="Go to top">↑</button>
     </>
   )
