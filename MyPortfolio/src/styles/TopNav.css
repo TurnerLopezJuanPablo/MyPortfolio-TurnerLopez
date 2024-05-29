@@ -10,6 +10,25 @@
 
     z-index: 999;
     transition: 500ms;
+
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+}
+
+.div-overlay strong {
+    position: fixed;
+    text-align: center;
+    bottom: 25px;
+
+    transition: 500ms;
+}
+
+.div-overlay:hover strong {
+    font-size: large;
+    color: white;
+
+    transition: 500ms;
 }
 
 .div-overlay.show {
@@ -17,7 +36,6 @@
     width: calc(100% - 200px);
     visibility: visible;
 }
-
 
 .header {
     display: flex;
@@ -140,6 +158,13 @@ a:hover {
 
         padding: 1.2rem;
         z-index: 1000;
+
+        transition: 500ms;
+    }
+
+    .container:hover {
+        filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.40));
+        transition: 300ms;
     }
 
     .bar1,
@@ -165,4 +190,10 @@ a:hover {
         transform: translate(0, -11px) rotate(45deg);
     }
 
+}
+
+@media screen and (max-width: 500px) {
+    .div-overlay strong {
+       opacity: 0 !important;
+    }
 }

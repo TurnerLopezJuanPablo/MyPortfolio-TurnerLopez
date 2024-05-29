@@ -57,7 +57,9 @@ function TopNav() {
         <div className="bar3"></div>
       </div>
 
-      <div className='div-overlay' ref={divOverlay} onClick={closeNav}></div>
+      <div className='div-overlay' ref={divOverlay} onClick={closeNav}>
+        <strong>Click here to close SideNav</strong>
+      </div>
     </>
   )
 }
