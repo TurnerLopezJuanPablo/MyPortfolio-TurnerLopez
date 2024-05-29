@@ -32,7 +32,7 @@ export const Contact = () => {
       </div>
 
       <h3>
-        Si tienes una idea o necesitas asesoramiento, no dudes en contactarme.
+        Si tenes una idea o necesitas asesoramiento, no dudes en contactarme.
         Conecta conmigo a través de mis redes sociales o envíame un correo electrónico,
         los detalles están justo abajo.
       </h3>
