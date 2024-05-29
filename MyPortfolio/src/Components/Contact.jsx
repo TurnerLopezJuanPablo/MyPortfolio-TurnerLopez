@@ -7,7 +7,7 @@ export const Contact = () => {
 
       <div className="form-container card">
         <h2>Contacto</h2>
-        <form name='contact' method="POST" data-netlify="true">
+        <form name='contact' method="POST" action="#" data-netlify="true">
           <div className="form-group">
             <label htmlFor="name">Nombre:</label>
             <input type="text" id="name" name="name" required />
@@ -24,7 +24,7 @@ export const Contact = () => {
           </div>
 
           <div className="form-group">
-            <button type="submit">Enviar</button>
+            <button type="submit">Enviar mensaje</button>
           </div>
         </form>
       </div>
