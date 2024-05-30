@@ -63,35 +63,35 @@ export const Contact = () => {
 
       <div className="contact-container-fotos">
         <a href="https://github.com/TurnerLopezJuanPablo" target="_blank" rel="noopener noreferrer">
-          <img src={GitHubLogo} alt='GitHub Logo' height={40} />
-
           <div className='div-tooltip'>
             <p>Turner Lopez Juan Pablo</p>
           </div>
+
+          <img src={GitHubLogo} alt='GitHub Logo' height={40} />
         </a>
 
         <a href="https://linkedin.com/in/juan-pablo-turner-lopez-a713a427b" target="_blank" rel="noopener noreferrer">
-          <img src={LinkedInLogo} alt='LinkedIn Logo' height={40} />
-
           <div className='div-tooltip'>
             <p>Juan Pablo Turner Lopez</p>
           </div>
+
+          <img src={LinkedInLogo} alt='LinkedIn Logo' height={40} />
         </a>
 
         <a onClick={() => handleClick(whatsappTooltipRef)}>
-          <img src={WhatsAppLogo} alt='WhatsApp Logo' height={40} />
-
           <div className='div-tooltip' ref={whatsappTooltipRef}>
             <p>+54 9 11 4407-1307</p>
           </div>
+
+          <img src={WhatsAppLogo} alt='WhatsApp Logo' height={40} />
         </a>
 
         <a onClick={() => handleClick(emailTooltipRef)}>
-          <img src={EmailLogo} alt='Email Logo' height={40} />
-
-          <div className='div-tooltip' ref={emailTooltipRef}>
+          <div className='div-tooltip email-tooltip' ref={emailTooltipRef}>
             <p>turnerlopezjuanpablo@gmail.com</p>
           </div>
+
+          <img src={EmailLogo} alt='Email Logo' height={40} />
         </a>
       </div>
     </section>

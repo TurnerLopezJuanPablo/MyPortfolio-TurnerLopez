@@ -60,8 +60,8 @@
 
 .form-group button {
     display: block;
-    width: 100%;
-    padding: 10px;
+    padding: 10px 20px;
+    margin: auto;
     border: none;
     background-color: #7660B5;
     color: white;
@@ -88,9 +88,19 @@
     margin-top: 4rem;
 }
 
+.contact-container-fotos a {
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+}
+
 .contact-container-fotos img {
     opacity: 0.3;
     transition: 300ms;
+
+    height: 40px !important;
 }
 
 .contact-container-fotos img:hover {
@@ -104,20 +114,18 @@
     visibility: hidden;
     position: absolute;
     background-color: #7660B5;
-
-
-    text-align: center;
-    color: #fff;
     border-radius: 5px;
     padding: 0 10px;
     z-index: 1;
-
-    transition: 0.3s;
+    text-align: center;
+    color: #fff;
     opacity: 0;
+    transition: opacity 0.3s;
 }
 
 .div-tooltip p {
     font-weight: 500;
+    margin: 10px;
 }
 
 .contact-container-fotos a:hover .div-tooltip {
@@ -125,4 +133,25 @@
     opacity: 1;
 
     transition: 0.3s;
+    transform: translate(0, -50px);
+}
+
+@media screen and (max-width: 1000px) {
+    .contact-container-fotos {
+        margin-top: 2rem;
+    }
+
+    .contact-container h3 {
+        font-size: 0.95rem;
+    }
+
+    .div-tooltip p {
+        font-size: 0.9rem;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .contact-container-fotos a:hover .email-tooltip {
+        transform: translate(-80px, -50px);
+    }
 }

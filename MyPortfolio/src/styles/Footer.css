@@ -41,3 +41,13 @@
         transform: rotate(-360deg);
     }
 }
+
+@media screen and (max-width: 1000px) {
+    .footer {
+        margin-top: 0;
+    }
+
+    .footer-text p {
+        font-size: 0.85rem;
+    }
+}
