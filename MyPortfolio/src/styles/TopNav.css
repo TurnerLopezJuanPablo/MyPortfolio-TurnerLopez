@@ -68,7 +68,7 @@
     scroll-margin-top: 50px;
 }
 
-a:hover {
+.header a:hover {
     color: #7660B5;
     letter-spacing: 0.05rem;
     padding: 0 0.7rem;

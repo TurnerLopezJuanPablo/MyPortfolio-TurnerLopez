@@ -1,0 +1,43 @@
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    color: #ffffff96;
+
+    margin-top: 2rem;
+}
+
+.footer-content {
+    display: flex;
+    align-items: center;
+}
+
+.footer-photo {
+    margin-right: 1rem;
+}
+
+.footer-photo img {
+    border-radius: 50%;
+    height: 60px;
+
+    animation: rotation360 10s infinite linear;
+}
+
+.footer-text {
+    text-align: center;
+}
+
+.footer-text p {
+    margin: 0;
+}
+
+@keyframes rotation360 {
+    0% {
+        transform: rotate(0);
+    }
+
+    100% {
+        transform: rotate(-360deg);
+    }
+}

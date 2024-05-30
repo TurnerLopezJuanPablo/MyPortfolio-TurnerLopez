@@ -9,8 +9,9 @@ import { AboutMe } from './Components/AboutMe'
 import { Studies } from './Components/Studies'
 import { Skills } from './Components/Skills'
 import { Projects } from './Components/Projects'
-import { Contact } from './Components/Contact'
 import { Code } from './Components/Code'
+import { Contact } from './Components/Contact'
+import { Footer } from './Components/Footer'
 
 function App() {
   const [hideTimeout, setHideTimeout] = useState(null)
@@ -65,11 +66,13 @@ function App() {
         <Studies />
         <Skills />
         <Projects />
-        <Contact />
         <Code />
+        <Contact />
       </main>
       
       <button onClick={topFunction} id="myBtn" title="Go to top">↑</button>
+
+      <Footer />
     </>
   )
 }

@@ -78,3 +78,51 @@
 
     transition: 300ms;
 }
+
+.contact-container-fotos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+
+    margin-top: 4rem;
+}
+
+.contact-container-fotos img {
+    opacity: 0.3;
+    transition: 300ms;
+}
+
+.contact-container-fotos img:hover {
+    opacity: 1;
+    transition: 300ms;
+
+    cursor: pointer;
+}
+
+.contact-container-fotos .div-tooltip {
+    visibility: hidden;
+    position: absolute;
+    background-color: #7660B5;
+
+
+    text-align: center;
+    color: #fff;
+    border-radius: 5px;
+    padding: 0 10px;
+    z-index: 1;
+
+    transition: 0.3s;
+    opacity: 0;
+}
+
+.div-tooltip p {
+    font-weight: 500;
+}
+
+.contact-container-fotos a:hover .div-tooltip {
+    visibility: visible;
+    opacity: 1;
+
+    transition: 0.3s;
+}
