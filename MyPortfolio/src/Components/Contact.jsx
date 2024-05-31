@@ -9,15 +9,19 @@ import { useRef } from 'react'
 export const Contact = () => {
   const whatsappTooltipRef = useRef(null)
   const emailTooltipRef = useRef(null)
+  const copyText = '¡Copiado al portapapeles!'
 
   const handleClick = (ref) => {
     if (ref.current) {
-      const tooltipText = ref.current.textContent
-      navigator.clipboard.writeText(tooltipText).then(() => {
-        ref.current.innerHTML = '<p>¡Copiado al portapapeles!</p>';
+      const pElements = ref.current.querySelectorAll('p')
+
+      navigator.clipboard.writeText(pElements[0].innerText).then(() => {
+        pElements[0].classList.add('no-show')
+        pElements[1].classList.remove('no-show')
 
         setTimeout(() => {
-          ref.current.innerHTML = `<p>${tooltipText}</p>`
+          pElements[0].classList.remove('no-show')
+          pElements[1].classList.add('no-show')
         }, 1500)
       }).catch(err => {
         console.error('Failed to copy: ', err)
@@ -81,6 +85,7 @@ export const Contact = () => {
         <a onClick={() => handleClick(whatsappTooltipRef)}>
           <div className='div-tooltip' ref={whatsappTooltipRef}>
             <p>+54 9 11 4407-1307</p>
+            <p className='no-show'>{copyText}</p>
           </div>
 
           <img src={WhatsAppLogo} alt='WhatsApp Logo' height={40} />
@@ -89,6 +94,7 @@ export const Contact = () => {
         <a onClick={() => handleClick(emailTooltipRef)}>
           <div className='div-tooltip email-tooltip' ref={emailTooltipRef}>
             <p>turnerlopezjuanpablo@gmail.com</p>
+            <p className='no-show'>{copyText}</p>
           </div>
 
           <img src={EmailLogo} alt='Email Logo' height={40} />

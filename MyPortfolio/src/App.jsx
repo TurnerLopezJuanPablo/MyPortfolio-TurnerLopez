@@ -7,6 +7,7 @@ import TopNav from './Components/TopNav'
 import { Presentation } from './Components/Presentation'
 import { AboutMe } from './Components/AboutMe'
 import { Studies } from './Components/Studies'
+import { Jobs } from './Components/Jobs'
 import { Skills } from './Components/Skills'
 import { Projects } from './Components/Projects'
 import { Code } from './Components/Code'
@@ -64,6 +65,7 @@ function App() {
         <Presentation />
         <AboutMe />
         <Studies />
+        <Jobs />
         <Skills />
         <Projects />
         <Code />

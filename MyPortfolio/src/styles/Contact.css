@@ -136,6 +136,10 @@
     transform: translate(0, -50px);
 }
 
+.no-show {
+    display: none !important;
+}
+
 @media screen and (max-width: 1000px) {
     .contact-container-fotos {
         margin-top: 2rem;

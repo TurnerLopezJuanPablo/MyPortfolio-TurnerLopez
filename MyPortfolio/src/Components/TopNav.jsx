@@ -13,7 +13,7 @@ function TopNav() {
     if (menuIconRef.current) menuIconRef.current.classList.toggle("change")
     if (sideNavRef.current) sideNavRef.current.classList.toggle("change")
 
-    isNavOpen ? divOverlay.current.classList.add('show') :  divOverlay.current.classList.remove('show')
+    isNavOpen ? divOverlay.current.classList.add('show') : divOverlay.current.classList.remove('show')
   }, [isNavOpen, menuIconRef])
 
   const handleClick = () => {
@@ -40,10 +40,11 @@ function TopNav() {
         <a href='#presentation' onClick={handleClick2}>Presentacion</a>
         <a href='#aboutMe' onClick={handleClick2}>Sobre Mi</a>
         <a href='#studies' onClick={handleClick2}>Estudios</a>
+        <a href='#jobs' onClick={handleClick2}>Trabajos</a>
         <a href='#skills' onClick={handleClick2}>Habilidades</a>
         <a href='#projects' onClick={handleClick2}>Proyectos</a>
-        <a href='#contact' onClick={handleClick2}>Contacto</a>
         <a href='#code' onClick={handleClick2}>Codigo</a>
+        <a href='#contact' onClick={handleClick2}>Contacto</a>
 
         <div className='sideNav-div bottom' ref={sideNavRef}>
           <p>Portfolio - React APP</p>

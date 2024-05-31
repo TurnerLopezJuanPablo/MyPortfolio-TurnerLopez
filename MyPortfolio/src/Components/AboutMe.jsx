@@ -89,12 +89,8 @@ export const AboutMe = () => {
             Hoy me encuentro en búsqueda de mi primer empleo en area de TI, estoy constantemente aprendiendo sobre nuevas
             tecnologías. Soy una persona <span className='aboutMe-color-3'>responsable, ordenada</span> y estoy siempre dispuesto a <span className='aboutMe-color-3'>aprender</span> cosas
             nuevas que me ayuden a formarme como un mejor profesional.
-          </p>
-
-          <p>
-            Actualmente estoy cursando una <span className='aboutMe-color-1'>Diplomatura en Bases de Datos</span> en <span className='aboutMe-color-1'>UTN</span> que espero terminar
-            satisfactoriamente a mediados de Julio, y pronto voy a estar cursando en la misma institución un curso de
-            <span className='aboutMe-color-1'> AWS Cloud Computing</span> con finalización también a mediados de Julio.
+            Actualmente estoy cursando una <span className='aboutMe-color-1'>Diplomatura en Bases de Datos
+            </span> en <span className='aboutMe-color-1'>UTN</span> con finalización a mediados de Julio.
           </p>
 
           <div className="aboutMe-dots aboutMe-div-p">
