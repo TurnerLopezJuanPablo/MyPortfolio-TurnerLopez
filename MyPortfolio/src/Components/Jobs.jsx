@@ -1,4 +1,4 @@
-import Section from "../Section"
+import Section from '../Components/MiniComponents/Section'
 
 export const Jobs = () => {
   return (

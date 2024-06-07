@@ -36,21 +36,21 @@ export const Contact = () => {
       <div className="form-container card">
         <h2>Contacto</h2>
         <form name='contact' method="POST" data-netlify="true">
-          <input type="hidden" name="form-name" value="contact" />
+          <input type="hidden" name="form-name" value="contact" id='form-hidden-name' />
 
           <div className="form-group">
             <label htmlFor="name">Nombre:</label>
-            <input type="text" id="name" name="name" required />
+            <input type="text" id="name" name="name" required autoComplete='true' />
           </div>
 
           <div className="form-group">
             <label htmlFor="email">Correo Electrónico:</label>
-            <input type="email" id="email" name="email" required />
+            <input type="email" id="email" name="email" required autoComplete='true' />
           </div>
 
           <div className="form-group">
             <label htmlFor="message">Mensaje:</label>
-            <textarea id="message" name="message" rows="5" required></textarea>
+            <textarea id="message" name="message" rows="5" required autoComplete='false'></textarea>
           </div>
 
           <div className="form-group">

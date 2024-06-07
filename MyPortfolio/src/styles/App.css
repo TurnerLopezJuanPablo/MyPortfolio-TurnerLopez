@@ -91,3 +91,16 @@
     transform: translateY(0);
   }
 }
+
+hr {
+  width: 100%;
+  border: 0;
+  height: 3px;
+  background-image: linear-gradient(to right, transparent, rgba(199, 199, 199, 0.1), transparent);
+}
+
+
+h2 {
+  margin-top: 0;
+  margin-bottom: 2rem;
+}

@@ -1,6 +1,6 @@
 import './styles/App.css'
 
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useRef } from 'react'
 
 // Components imports
 import TopNav from './Components/TopNav'
@@ -57,24 +57,58 @@ function App() {
     document.documentElement.scrollTop = 0
   }
 
+  const mainDiv = useRef(null)
+
+  useEffect(() => {
+    const handleContextMenu = (e) => {
+      e.preventDefault()
+    }
+
+    const currentDiv = mainDiv.current
+    if (currentDiv) {
+      currentDiv.addEventListener('contextmenu', handleContextMenu)
+    }
+
+    return () => {
+      if (currentDiv) {
+        currentDiv.removeEventListener('contextmenu', handleContextMenu)
+      }
+    }
+  }, [])
+
   return (
     <>
-      <TopNav />
+      <div ref={mainDiv}>
+        <TopNav />
 
-      <main>
-        <Presentation />
-        <AboutMe />
-        <Studies />
-        <Jobs />
-        <Skills />
-        <Projects />
-        <Code />
-        <Contact />
-      </main>
-      
-      <button onClick={topFunction} id="myBtn" title="Go to top">↑</button>
+        <main>
+          <Presentation />
 
-      <Footer />
+          <AboutMe />
+          <hr></hr>
+
+          <Studies />
+          <hr></hr>
+
+          <Jobs />
+          <hr></hr>
+
+          <Skills />
+          <hr></hr>
+
+          <Projects />
+          <hr></hr>
+
+          <Code />
+          <hr></hr>
+
+          <Contact />
+        </main>
+
+        <button onClick={topFunction} id="myBtn" title="Go to top">↑</button>
+
+        <Footer />
+      </div>
     </>
   )
 }

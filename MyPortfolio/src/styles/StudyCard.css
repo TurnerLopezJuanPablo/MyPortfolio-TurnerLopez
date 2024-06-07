@@ -1,0 +1,22 @@
+.studyCard {
+    width: 60%;
+    min-height: 150px;
+    border-radius: 20px;
+    padding: 1rem 2rem;
+    flex-grow: 1;
+    background-color: rgba(68, 33, 100, 0.1);
+    box-shadow: 10px 8px 30px 1px rgba(0, 0, 0, 0.5);
+    -webkit-box-shadow: 10px 8px 30px 1px rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: 10px 8px 30px 1px rgba(0, 0, 0, 0.5);
+    position: relative;
+    overflow: hidden;
+}
+
+.studyCard-mouseFollowerDiv {
+    position: absolute;
+    inset: -1px;
+    background: radial-gradient(250px at var(--x-pos, 50%) var(--y-pos, 50%), rgba(255, 182, 255, 0.1), transparent 40%);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 300ms;
+}

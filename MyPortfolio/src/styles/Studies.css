@@ -1,0 +1,57 @@
+.studies-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
+
+.studies-last-p {
+    text-align: center;
+    font-weight: bold;
+}
+
+.checkbox-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin: 1.5rem 0;
+}
+
+input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #ccc;
+    border-radius: 3px;
+    cursor: pointer;
+    position: relative;
+    transition: 300ms;
+}
+
+input[type="checkbox"]:checked {
+    background-color: #7660B5;
+    border-color: #7660B5;
+    transition: 300ms;
+}
+
+input[type="checkbox"]+label {
+    cursor: pointer;
+    margin: auto 0;
+
+    user-select: none;
+}
+
+input[type="checkbox"]:checked::after {
+    content: "✔";
+    position: absolute;
+    font-size: 18px;
+    color: #fff;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -51%);
+}

@@ -1,4 +1,4 @@
-import Section from '../Section'
+import Section from '../Components/MiniComponents/Section'
 import '../styles/AboutMe.css'
 
 import { useEffect } from "react"
@@ -7,63 +7,63 @@ import MyPhoto from '../assets/MyPhoto.jpg'
 
 export const AboutMe = () => {
   useEffect(() => {
-    const elements_1 = document.querySelectorAll('.aboutMe-color-1');
-    const elements_2 = document.querySelectorAll('.aboutMe-color-2');
-    const elements_3 = document.querySelectorAll('.aboutMe-color-3');
+    const elements_1 = document.querySelectorAll('.aboutMe-color-1')
+    const elements_2 = document.querySelectorAll('.aboutMe-color-2')
+    const elements_3 = document.querySelectorAll('.aboutMe-color-3')
 
     const handleMouseEnter_1 = () => {
-      elements_1.forEach(el => el.classList.add('hover'));
-    };
+      elements_1.forEach(el => el.classList.add('hover'))
+    }
     const handleMouseLeave_1 = () => {
-      elements_1.forEach(el => el.classList.remove('hover'));
-    };
+      elements_1.forEach(el => el.classList.remove('hover'))
+    }
 
     const handleMouseEnter_2 = () => {
-      elements_2.forEach(el => el.classList.add('hover'));
-    };
+      elements_2.forEach(el => el.classList.add('hover'))
+    }
     const handleMouseLeave_2 = () => {
-      elements_2.forEach(el => el.classList.remove('hover'));
-    };
+      elements_2.forEach(el => el.classList.remove('hover'))
+    }
 
     const handleMouseEnter_3 = () => {
-      elements_3.forEach(el => el.classList.add('hover'));
-    };
+      elements_3.forEach(el => el.classList.add('hover'))
+    }
     const handleMouseLeave_3 = () => {
-      elements_3.forEach(el => el.classList.remove('hover'));
-    };
+      elements_3.forEach(el => el.classList.remove('hover'))
+    }
 
     elements_1.forEach(element => {
-      element.addEventListener('mouseenter', handleMouseEnter_1);
-      element.addEventListener('mouseleave', handleMouseLeave_1);
-    });
+      element.addEventListener('mouseenter', handleMouseEnter_1)
+      element.addEventListener('mouseleave', handleMouseLeave_1)
+    })
 
     elements_2.forEach(element => {
-      element.addEventListener('mouseenter', handleMouseEnter_2);
-      element.addEventListener('mouseleave', handleMouseLeave_2);
-    });
+      element.addEventListener('mouseenter', handleMouseEnter_2)
+      element.addEventListener('mouseleave', handleMouseLeave_2)
+    })
 
     elements_3.forEach(element => {
-      element.addEventListener('mouseenter', handleMouseEnter_3);
-      element.addEventListener('mouseleave', handleMouseLeave_3);
-    });
+      element.addEventListener('mouseenter', handleMouseEnter_3)
+      element.addEventListener('mouseleave', handleMouseLeave_3)
+    })
 
     return () => {
       elements_1.forEach(element => {
-        element.removeEventListener('mouseenter', handleMouseEnter_1);
-        element.removeEventListener('mouseleave', handleMouseLeave_1);
-      });
+        element.removeEventListener('mouseenter', handleMouseEnter_1)
+        element.removeEventListener('mouseleave', handleMouseLeave_1)
+      })
 
       elements_2.forEach(element => {
-        element.removeEventListener('mouseenter', handleMouseEnter_2);
-        element.removeEventListener('mouseleave', handleMouseLeave_2);
-      });
+        element.removeEventListener('mouseenter', handleMouseEnter_2)
+        element.removeEventListener('mouseleave', handleMouseLeave_2)
+      })
 
       elements_3.forEach(element => {
-        element.removeEventListener('mouseenter', handleMouseEnter_3);
-        element.removeEventListener('mouseleave', handleMouseLeave_3);
-      });
-    };
-  }, []);
+        element.removeEventListener('mouseenter', handleMouseEnter_3)
+        element.removeEventListener('mouseleave', handleMouseLeave_3)
+      })
+    }
+  }, [])
 
   return (
     <Section idSection='aboutMe' title='Sobre mí' iconRoute='aboutmeIcon'>

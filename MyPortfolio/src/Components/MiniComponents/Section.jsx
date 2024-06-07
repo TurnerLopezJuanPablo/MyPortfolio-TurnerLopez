@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import './styles/Section.css'
+import '../../styles/Section.css'
 
 const Section = ({ idSection, title, children }) => {
     return (
