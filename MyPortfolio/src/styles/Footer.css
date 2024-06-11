@@ -32,13 +32,33 @@
     margin: 0;
 }
 
+.footer-article {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    margin: 2rem auto;
+    margin-bottom: 1rem !important;
+}
+
+.footer-styled {
+    background: #9775fa;
+    border-radius: 10px;
+    text-align: center;
+    line-height: 25px;
+    color: white;
+    font-weight: bold;
+    padding: 0.3rem 0.7rem;
+}
+
 @keyframes rotation360 {
     0% {
         transform: rotate(0);
     }
 
     100% {
-        transform: rotate(-360deg);
+        transform: rotate(360deg);
     }
 }
 

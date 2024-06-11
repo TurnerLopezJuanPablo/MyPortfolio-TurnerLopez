@@ -67,7 +67,7 @@ export const CV = () => {
                     </span>
                 </button>
 
-                <p style={{ fontStyle: 'italic', marginBottom: '0' }}>Size: 1MB</p>
+                <p style={{ fontStyle: 'italic', marginBottom: '0' }}>Tamaño: 1MB</p>
             </div>
 
             {/* MODAL */}

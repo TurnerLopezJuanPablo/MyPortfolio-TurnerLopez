@@ -65,6 +65,10 @@ export const Contact = () => {
         los detalles están justo abajo.
       </h3>
 
+      <div className='link-CV-Container'>
+        <a href='#CV'>Ir a Descargar mi CV</a>
+      </div>
+
       <div className="contact-container-fotos">
         <a href="https://github.com/TurnerLopezJuanPablo" target="_blank" rel="noopener noreferrer">
           <div className='div-tooltip'>
