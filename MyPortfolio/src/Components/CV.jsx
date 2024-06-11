@@ -42,7 +42,7 @@ export const CV = () => {
         }, 1000)
     }
 
-    const fileUrl = '../../CV-PDF/CV - TurnerLopez JuanPablo.pdf'
+    const fileUrl = '../../CV - TurnerLopez JuanPablo.pdf'
 
     const handleOpenCV = () => {
         fetch(fileUrl).then((response) => {
