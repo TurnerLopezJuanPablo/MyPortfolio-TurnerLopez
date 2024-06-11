@@ -14,18 +14,18 @@ export const CV = () => {
     const handleClick = () => {
         jsConfetti.addConfetti()
 
+        let modal = modalRef.current
+        modal.style.display = 'block'
+        modal.classList.add('show')
+
+        let bgModal = bgModalRef.current
+        bgModal.style.display = 'block'
+        setTimeout(() => {
+            bgModal.classList.add('show')
+        }, 10)
+
         setTimeout(() => {
             handleOpenCV()
-
-            let modal = modalRef.current
-            modal.style.display = 'block'
-            modal.classList.add('show')
-
-            let bgModal = bgModalRef.current
-            bgModal.style.display = 'block'
-            setTimeout(() => {
-                bgModal.classList.add('show')
-            }, 10)
         }, 1500)
     }
 
@@ -42,9 +42,15 @@ export const CV = () => {
         }, 1000)
     }
 
+    const fileUrl = '../../CV-PDF/CV - TurnerLopez JuanPablo.pdf'
+
     const handleOpenCV = () => {
-        const fileUrl = '../../CV-PDF/CV - TurnerLopez JuanPablo.pdf'
-        window.open(fileUrl, '_blank')
+        fetch(fileUrl).then((response) => {
+            response.blob().then((blob) => {
+                const fileURL = window.URL.createObjectURL(blob)
+                window.open(fileURL, "_blank")
+            })
+        })
     }
 
     return (
