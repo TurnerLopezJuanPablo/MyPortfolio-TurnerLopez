@@ -4,6 +4,14 @@ import Section from './MiniComponents/Section'
 import JSConfetti from 'js-confetti'
 import DownloadIcon from '../assets/icons8-descargar-48.png'
 
+// CV 
+import cvPdf from '../../CV/CV - TurnerLopez JuanPablo.pdf'
+import * as pdfjsLib from 'pdfjs-dist';
+import 'pdfjs-dist/web/pdf_viewer.css';
+
+// Configurar la URL del worker
+pdfjsLib.GlobalWorkerOptions.workerSrc = '//unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.js'
+
 import { useRef } from 'react'
 
 export const CV = () => {
@@ -42,15 +50,37 @@ export const CV = () => {
         }, 1000)
     }
 
-    const fileUrl = '../../CV - TurnerLopez JuanPablo.pdf'
+    const handleOpenCV = async () => {
+        try {
+            const response = await fetch(cvPdf)
+            const blob = await response.blob()
+            const fileURL = window.URL.createObjectURL(blob)
 
-    const handleOpenCV = () => {
-        fetch(fileUrl).then((response) => {
-            response.blob().then((blob) => {
-                const fileURL = window.URL.createObjectURL(blob)
-                window.open(fileURL, "_blank")
-            })
-        })
+            // Abre el PDF en una nueva pestaña utilizando PDF.js
+            const newTab = window.open()
+            const pdfData = await fetch(fileURL).then(res => res.arrayBuffer())
+            const pdf = await pdfjsLib.getDocument({ data: pdfData }).promise
+
+            // Generar un elemento canvas en la nueva pestaña
+            const canvas = newTab.document.createElement('canvas')
+            newTab.document.body.appendChild(canvas)
+            const context = canvas.getContext('2d')
+
+            // Renderizar la primera página del PDF
+            const page = await pdf.getPage(1)
+            const viewport = page.getViewport({ scale: 1.5 })
+            canvas.height = viewport.height
+            canvas.width = viewport.width
+
+            const renderContext = {
+                canvasContext: context,
+                viewport: viewport
+            }
+
+            page.render(renderContext)
+        } catch (error) {
+            console.error('Error opening the PDF:', error)
+        }
     }
 
     return (
