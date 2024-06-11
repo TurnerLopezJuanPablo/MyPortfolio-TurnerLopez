@@ -2,7 +2,8 @@ import '../../styles/StudyCard.css'
 import { LightContext } from '../Studies'
 import { useEffect, useRef, useContext } from 'react'
 
-const StudyCard = () => {
+// eslint-disable-next-line react/prop-types
+const StudyCard = ({ image, title, school, time, text }) => {
     const studyCard = useRef(null)
     const radialBackground = useRef(null)
     const useLight = useContext(LightContext)
@@ -37,17 +38,23 @@ const StudyCard = () => {
     }, [])
 
     return (
-        <div className='studyCard' ref={studyCard}>
-            {useLight && (
-                <>
-                    <div
-                        className="studyCard-mouseFollowerDiv"
-                        ref={radialBackground}
-                    />
-                </>
-            )}
-            <p>Hola</p>
-        </div>
+        <article className='studyCard' ref={studyCard}>
+            {useLight && (<><div className="studyCard-mouseFollowerDiv" ref={radialBackground} /></>)}
+
+            <div className='studyCard-header'>
+                <img src={image} alt={'Imagen ' + school} />
+
+                <div className='studyCard-header-titles'>
+                    <h3>{school}</h3>
+                    <h4>{time}</h4>
+                    <h4 className='h4-alt'>{title}</h4>
+                </div>
+            </div>
+
+            <div className='studyCard-text'>
+                <p>{text}</p>
+            </div>
+        </article>
     )
 }
 

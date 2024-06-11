@@ -66,7 +66,7 @@ export const AboutMe = () => {
   }, [])
 
   return (
-    <Section idSection='aboutMe' title='Sobre mí' iconRoute='aboutmeIcon'>
+    <Section idSection='aboutMe' title='Sobre mí'>
       <div className="aboutMe-flex">
         <img src={MyPhoto} alt='My Photo' className="aboutMe-myPhoto"></img>
         <div className="aboutMe-div-p">

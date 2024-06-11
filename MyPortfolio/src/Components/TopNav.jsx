@@ -39,6 +39,7 @@ function TopNav() {
       <div className="header sidenav" id="sidenav">
         <a href='#presentation' onClick={handleClick2}>Presentacion</a>
         <a href='#aboutMe' onClick={handleClick2}>Sobre Mi</a>
+        <a href='#CV' onClick={handleClick2}>CV</a>
         <a href='#studies' onClick={handleClick2}>Estudios</a>
         <a href='#jobs' onClick={handleClick2}>Trabajos</a>
         <a href='#skills' onClick={handleClick2}>Habilidades</a>

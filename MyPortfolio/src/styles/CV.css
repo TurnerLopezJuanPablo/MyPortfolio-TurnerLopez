@@ -1,0 +1,141 @@
+.CV {
+    display: grid;
+    place-items: center;
+    margin: 2rem auto;
+}
+
+.CV button {
+    position: relative;
+    font-family: inherit;
+    font-weight: 500;
+    font-size: 1rem;
+    letter-spacing: 0.05em;
+    border-radius: 0.8em;
+    cursor: pointer;
+    border: none;
+    background: linear-gradient(to right, #7660B5, #4723b3);
+    color: ghostwhite;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.CV button img {
+    width: 1.4em;
+    height: 1.4em;
+    margin-right: 0.6em;
+}
+
+.CV button span {
+    position: relative;
+    z-index: 10;
+    transition: color 0.4s;
+    display: inline-flex;
+    align-items: center;
+    padding: 0.8em 1.2em 0.8em 1em;
+}
+
+.CV button::before,
+.CV button::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.CV button::before {
+    content: "";
+    background: #000;
+    width: 120%;
+    left: -10%;
+    transform: skew(30deg);
+    transition: transform 0.6s cubic-bezier(0.3, 1, 0.8, 1);
+}
+
+.CV button:hover::before {
+    transform: translate3d(100%, 0, 0);
+}
+
+.CV button:active {
+    transform: scale(0.95);
+}
+
+/* MODAL - MODAL */
+.modal {
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    cursor: pointer;
+}
+
+.modal:not(.show) {
+    display: none;
+    animation: slideUp 1s ease-in-out;
+}
+
+.modal-content {
+    background-color: #202020;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
+
+.modal-last-p {
+    font-size: 0.85rem;
+    font-style: italic;
+    text-align: center;
+    margin-top: 2.5rem;
+    margin-bottom: 0;
+}
+
+.modal.show {
+    display: block;
+    animation: slideDown 1s ease-in-out;
+}
+
+@keyframes slideDown {
+    from {
+        top: -100%;
+    }
+
+    to {
+        top: 0;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        top: 0;
+    }
+
+    to {
+        top: -100%;
+    }
+}
+
+.bg-body-withModal {
+    background-color: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    z-index: 99;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    opacity: 0;
+    display: none;
+    transition: opacity 1s ease-in-out;
+}
+
+.bg-body-withModal.show {
+    opacity: 1;
+    display: block;
+}

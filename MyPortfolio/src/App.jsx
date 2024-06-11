@@ -6,6 +6,7 @@ import { useEffect, useState, useRef } from 'react'
 import TopNav from './Components/TopNav'
 import { Presentation } from './Components/Presentation'
 import { AboutMe } from './Components/AboutMe'
+import { CV } from './Components/CV'
 import { Studies } from './Components/Studies'
 import { Jobs } from './Components/Jobs'
 import { Skills } from './Components/Skills'
@@ -85,6 +86,9 @@ function App() {
           <Presentation />
 
           <AboutMe />
+          <hr></hr>
+
+          <CV />
           <hr></hr>
 
           <Studies />

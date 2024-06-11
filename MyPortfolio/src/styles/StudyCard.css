@@ -15,8 +15,43 @@
 .studyCard-mouseFollowerDiv {
     position: absolute;
     inset: -1px;
-    background: radial-gradient(250px at var(--x-pos, 50%) var(--y-pos, 50%), rgba(255, 182, 255, 0.1), transparent 40%);
+    background: radial-gradient(250px at var(--x-pos, 50%) var(--y-pos, 50%), rgba(255, 182, 255, 0.1), transparent 60%);
     opacity: 0;
     pointer-events: none;
     transition: opacity 300ms;
+}
+
+.studyCard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: nowrap;
+}
+
+.studyCard-header img {
+    height: 120px;
+    border-radius: 50%;
+}
+
+.studyCard-header-titles {
+    text-align: end;
+}
+
+.studyCard-header-titles h3 {
+    font-weight: bolder;
+    font-size: 1.45rem;
+}
+
+.studyCard-header-titles h4 {
+    font-weight: 500;
+}
+
+.studyCard-header-titles .h4-alt {
+    font-style: italic;
+}
+
+
+.studyCard-text p {
+    text-align: justify;
 }

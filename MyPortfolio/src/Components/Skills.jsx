@@ -72,6 +72,18 @@ const useWindowResize = () => {
   return windowWidthSize
 }
 
+// eslint-disable-next-line react/prop-types
+const ButtonToggleShowCards = ({ showCards, onClick }) => {
+  return (
+    <div className='skills-center'>
+      <button
+        id="btn-show-cards"
+        className={`${showCards ? 'up' : 'down'} ${showCards ? 'transition' : ''}`}
+        onClick={onClick}
+      ></button>
+    </div>
+  )
+}
 export const Skills = () => {
   const scrollerRef = useRef(null)
   const [isSliding, setIsSliding] = useState(true)
@@ -122,28 +134,26 @@ export const Skills = () => {
     const value = parseInt(event.target.value, 10)
     value >= 1 ? setDirection(true) : setDirection(false)
     setVelocity(value)
-    console.log(accordionRef.current.scrollHeight)
   }
 
+  const newWidth = useWindowResize()
+  const [accHeight, setAccHeight] = useState(null)
+  const accordionRef = useRef(null)
   const [showCards, setShowCards] = useState(false)
 
   const handleClick2 = () => {
     setShowCards(!showCards)
   }
 
-  const accordionRef = useRef(null)
-  const newWidth = useWindowResize()
-  const [accHeight, setAccHeight] = useState(null)
-
   useEffect(() => {
-    if (accordionRef.current) { setAccHeight(accordionRef.current.scrollHeight) }
+    if (accordionRef.current) setAccHeight(accordionRef.current.scrollHeight)
   }, [newWidth])
 
   return (
     <Section idSection="skills" title="Habilidades">
       <p className='skills-subtitle'>{"No es suficiente ser 'bueno' en programación, debes esforzarte por ser 'excelente' 😉"}</p>
 
-      <div className="skills-scroller" ref={scrollerRef}>
+      <div className="skills-scroller" ref={scrollerRef} >
         <div className="skills-scroller__inner scroller__inner">
           {skills.concat(skills).map((skill, index) => (
             <div key={index} className="skill-item">
@@ -177,17 +187,16 @@ export const Skills = () => {
         <p className='skills-subtitle'>Clickeando el botón de debajo podrás ver mis habilidades por separado 👌</p>
 
         <div>
-          <div className='skills-center'>
-            <button onClick={handleClick2} id="btn-show-cards" />
-          </div>
+          <ButtonToggleShowCards showCards={showCards} onClick={handleClick2} />
 
           <div
             ref={accordionRef}
             className='panel'
             style={{
               maxHeight: showCards ? `${accHeight}px` : '0px',
-              transition: 'max-height 2s ease-in-out',
+              transition: 'max-height 1s ease-in-out',
             }}
+            onClick={handleClick}
           >
             <div className="skills-cards-normal">
               {skills.map((skill, index) => (
@@ -200,6 +209,8 @@ export const Skills = () => {
                 </div>
               ))}
             </div>
+
+            <ButtonToggleShowCards showCards={showCards} onClick={handleClick2} />
           </div>
         </div>
       </article>

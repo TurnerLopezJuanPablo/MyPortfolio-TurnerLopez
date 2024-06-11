@@ -55,3 +55,11 @@ input[type="checkbox"]:checked::after {
     top: 50%;
     transform: translate(-50%, -51%);
 }
+
+.studies-p-info {
+    font-size: 0.85rem;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 2rem;
+    font-style: italic;
+}
