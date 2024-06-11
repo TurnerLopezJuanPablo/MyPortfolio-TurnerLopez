@@ -63,3 +63,8 @@ input[type="checkbox"]:checked::after {
     margin-bottom: 2rem;
     font-style: italic;
 }
+
+.mouseIcon {
+    height: 15px;
+    opacity: 0.7;
+}

@@ -6,6 +6,10 @@ import '../styles/Studies.css'
 
 export const LightContext = createContext(null)
 
+const mouseSvg = (
+<img className="mouseIcon" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAABrUlEQVR4nO3Zv6tPYRwH8A9xUbKQkA1lwUCJVZEyGGSzUP4ABjLJxK4MBiWjSTZJBgM2g2yipPxaCLeu+9KTr9yue85x3fs953lO57Wez/B5f7+d87xPJ2IwGAzq4D6eYlOUzB8vsTV6ECR5i51RIn/7hP3RgyDJFxyMkqg2iWPRgyDJFE5FCTSbxtnoQZDfLkfOzM9VLI0eBEluYXnkxv+5g1XRgyDJA6yJXFiYVDbXRQ+CJM+xuQ9B8mjOFk9qzrv6EKTb5mzxddOcjcdk683Z+Ey12pyN13RrzVk7LvQlyPuSgnzFKzzGXdzAFZzB7pyDpJv5MLZg9dgXbbLAf+Fc5EKzHzXX3mBF5EDzwXYcT2pmTkYOVPuOo6OZEzVzL7J4jze3zzgwY2Zi1G6rHMkxyEfsnWPuYk2Qh91sP8OshdKvvqNibj2+1YTZF10yj7c83KwJcru9rau/WKWn0sZ/mN3TcEBui1LgUU2Ya1EKv86VKuke2hAlwDK8rglzKUqB8zVBPqRzJ0qAtaPaXnXST0QpcH1WgGc4jZVREmzHO9zDISzpeqfBIKr9BC6bE85p69PcAAAAAElFTkSuQmCC" />
+)
+
 // eslint-disable-next-line react/prop-types
 const LightInputBtn = ({ isLightEnabled, handleClick, id }) => {
   return (
@@ -59,7 +63,7 @@ export const Studies = () => {
         <LightInputBtn isLightEnabled={isLightEnabled} handleClick={handleClick} id={'light-checkbox-1'} />
 
         <p className="studies-p-info">
-          Luz que sigue al mouse dentro de las cartas de estudios. Es algo estético y se puede desactivar aquí.
+          Luz que sigue al {mouseSvg} dentro de las cartas de estudios. Es algo estético y se puede desactivar aquí si lo deseas.
         </p>
 
         <div className="studies-container">

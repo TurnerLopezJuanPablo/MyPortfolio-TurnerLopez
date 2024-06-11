@@ -15,7 +15,7 @@
 .studyCard-mouseFollowerDiv {
     position: absolute;
     inset: -1px;
-    background: radial-gradient(250px at var(--x-pos, 50%) var(--y-pos, 50%), rgba(255, 182, 255, 0.1), transparent 60%);
+    background: radial-gradient(250px at var(--x-pos, 50%) var(--y-pos, 50%), rgba(255, 182, 255, 0.2), transparent 80%);
     opacity: 0;
     pointer-events: none;
     transition: opacity 300ms;
@@ -36,6 +36,7 @@
 
 .studyCard-header-titles {
     text-align: end;
+    width: 100%;
 }
 
 .studyCard-header-titles h3 {
@@ -51,7 +52,49 @@
     font-style: italic;
 }
 
-
 .studyCard-text p {
     text-align: justify;
+}
+
+@media screen and (max-width: 750px) {
+    .studyCard-header {
+        flex-direction: column;
+        align-items: start;
+        gap: 0.6rem;
+    }
+
+    .studyCard-header-titles {
+        text-align: left;
+    }
+
+    .studyCard-header img {
+        margin: 1rem auto;
+        margin-bottom: 0 !important;
+    }
+
+    .studyCard {
+        width: 70%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .studyCard-text p {
+        font-size: 0.85rem;
+    }
+
+    .studyCard {
+        width: 80%;
+    }
+
+    .studyCard-header-titles h3 {
+        font-size: 1.2rem;
+    }
+
+    .studyCard-header-titles h4 {
+        font-size: 0.95rem;
+    }
+
+    .studyCard-header-titles .h4-alt {
+        text-align: end;
+    }
 }
