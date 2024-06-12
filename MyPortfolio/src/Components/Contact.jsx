@@ -31,7 +31,7 @@ export const Contact = () => {
 
   return (
     <section id='contact' className="contact-container">
-      <h2>¡Impulsa tus proyectos con mi ayuda!</h2>
+      <h2 className='title' style={{marginBottom: '3rem'}}>¡Impulsa tus proyectos con mi ayuda!</h2>
 
       <div className="form-container card">
         <h2>Contacto</h2>

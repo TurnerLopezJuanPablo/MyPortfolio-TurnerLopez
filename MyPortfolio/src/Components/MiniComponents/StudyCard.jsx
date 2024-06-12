@@ -45,9 +45,9 @@ const StudyCard = ({ image, title, school, time, text }) => {
                 <img src={image} alt={'Imagen ' + school} />
 
                 <div className='studyCard-header-titles'>
-                    <h3>{school}</h3>
-                    <h4>{time}</h4>
-                    <h4 className='h4-alt'>{title}</h4>
+                    <h3>{title}</h3>
+                    <h4>{school}</h4>
+                    <h4 className='h4-alt'>{time}</h4>
                 </div>
             </div>
 

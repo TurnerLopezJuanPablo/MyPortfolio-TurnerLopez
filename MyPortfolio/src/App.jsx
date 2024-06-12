@@ -77,10 +77,12 @@ function App() {
     }
   }, [])
 
+  const [toggleSlider, setToggleSlider] = useState(true)
+
   return (
     <>
       <div ref={mainDiv}>
-        <TopNav />
+        <TopNav updateToggleSlider={setToggleSlider} />
 
         <main>
           <Presentation />
@@ -97,7 +99,7 @@ function App() {
           <Jobs />
           <hr></hr>
 
-          <Skills />
+          <Skills toggleSlider={toggleSlider} />
           <hr></hr>
 
           <Projects />

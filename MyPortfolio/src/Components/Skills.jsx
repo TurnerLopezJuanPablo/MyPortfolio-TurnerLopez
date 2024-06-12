@@ -84,12 +84,14 @@ const ButtonToggleShowCards = ({ showCards, onClick }) => {
     </div>
   )
 }
-export const Skills = () => {
+
+// eslint-disable-next-line react/prop-types
+export const Skills = ({ toggleSlider }) => {
   const scrollerRef = useRef(null)
   const [isSliding, setIsSliding] = useState(true)
   const [scrollPosition, setScrollPosition] = useState(true)
   const [velocity, setVelocity] = useState(1)
-  const [direction, setDirection] = useState(true) // True = ToRight // False = ToLeft
+  const [direction, setDirection] = useState(true) // True = ToRight // False = ToLeft  
 
   useEffect(() => {
     const scroller = scrollerRef.current
@@ -119,12 +121,12 @@ export const Skills = () => {
       animationFrameId = requestAnimationFrame(animate)
     }
 
-    if (isSliding) {
+    if (isSliding && toggleSlider) {
       animationFrameId = requestAnimationFrame(animate)
     }
 
     return () => cancelAnimationFrame(animationFrameId)
-  }, [isSliding, scrollPosition, velocity, direction])
+  }, [isSliding, scrollPosition, velocity, direction, toggleSlider])
 
   const handleClick = () => {
     setIsSliding(!isSliding)
