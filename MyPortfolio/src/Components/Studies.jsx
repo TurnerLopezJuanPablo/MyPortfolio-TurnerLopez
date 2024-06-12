@@ -20,7 +20,7 @@ const LightInputBtn = ({ isLightEnabled, handleClick, id }) => {
   );
 }
 
-import sfrandesalesLogo from '../assets/sfrandesales-logo.png'
+import sfrandesalesLogo from '../assets/sfrandesales-logo.jpg'
 import ortLogo from '../assets/ort-logo.png'
 import utnLogo from '../assets/utn-logo.jpg'
 

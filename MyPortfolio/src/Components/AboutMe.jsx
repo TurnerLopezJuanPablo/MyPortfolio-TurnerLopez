@@ -2,8 +2,38 @@ import Section from '../Components/MiniComponents/Section'
 import '../styles/AboutMe.css'
 
 import { useEffect } from "react"
+// import { useLanguage } from "../customHooks/useLanguageHook"
 
 import MyPhoto from '../assets/MyPhoto.jpg'
+
+// const LanguageResources = {
+//   SPANISH: {
+//     presentation: 'Presentación',
+//     aboutMe: 'Sobre Mi',
+//     CV: 'CV',
+//     studies: 'Estudios',
+//     jobs: 'Trabajos',
+//     skills: 'Habilidades',
+//     projects: 'Proyectos',
+//     code: 'Código',
+//     contact: 'Contacto',
+//     react: 'Mi primer proyecto en REACT.JS',
+//     sidenav: 'Click acá para cerrar el menú lateral'
+//   },
+//   ENGLISH: {
+//     presentation: 'Presentation',
+//     aboutMe: 'About Me',
+//     CV: 'CV',
+//     studies: 'Studies',
+//     jobs: 'Jobs',
+//     skills: 'Skills',
+//     projects: 'Projects',
+//     code: 'Code',
+//     contact: 'Contact',
+//     react: 'My first REACT.JS project',
+//     sidenav: 'Click here to close side menu'
+//   }
+// }
 
 export const AboutMe = () => {
   useEffect(() => {
@@ -64,6 +94,8 @@ export const AboutMe = () => {
       })
     }
   }, [])
+
+  // const { getTranslation } = useLanguage(LanguageResources)
 
   return (
     <Section idSection='aboutMe' title='Sobre mí'>

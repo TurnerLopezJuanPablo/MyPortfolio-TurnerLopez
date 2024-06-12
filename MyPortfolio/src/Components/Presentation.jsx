@@ -2,7 +2,27 @@ import '../styles/Presentation.css'
 import computerIllustration from '../assets/computer-illustration.png'
 import locationIcon from '../assets/icons8-location-48.png'
 
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useContext } from 'react'
+
+import { useLanguage } from '../customHooks/useLanguageHook'
+import { LanguageContext } from './Context/LanguageContext'
+
+const LanguageResources = {
+  SPANISH: {
+    systems: 'Analista de sistemas',
+    desc: 'Explorando nuevas tecnologías',
+    btnText: 'escritura de texto',
+    activate: 'Activar',
+    deactivate: 'Desactivar'
+  },
+  ENGLISH: {
+    systems: 'Systems Analyst',
+    desc: 'Exploring new technologies',
+    btnText: 'text writing',
+    activate: 'Activate',
+    deactivate: 'Deactivate'
+  }
+}
 
 export const Presentation = () => {
   const fullName = 'Juan Pablo, Turner Lopez'
@@ -87,6 +107,9 @@ export const Presentation = () => {
     }
   }, [start])
 
+  const useLanguageContext = useContext(LanguageContext)
+  const { getTranslation } = useLanguage(LanguageResources, useLanguageContext.selectedLanguage)
+
   return (
     <section id='presentation'>
       <div className='presentation-mainDiv'>
@@ -106,9 +129,9 @@ export const Presentation = () => {
       <div className='presentation-section'>
         <div>
           <h2 className='presentation-subTitle'>
-            <p>💻 Analista de Sistemas</p>
+            <p>💻 {getTranslation('systems')}</p>
             <p>🔥 Fullstack Developer</p>
-            <p>🤔 Explorando nuevas tecnologías</p>
+            <p>🤔 {getTranslation('desc')}</p>
           </h2>
 
           <h3 className='presentation-h3'>
@@ -117,7 +140,7 @@ export const Presentation = () => {
           </h3>
 
           <div className='presentation-btn-div'>
-            <button type='button' className='presentation-button' onClick={handleClick}>{!isWritting ? 'Activar' : 'Desactivar'} escritura de texto</button>
+            <button type='button' className='presentation-button' onClick={handleClick}>{!isWritting ? getTranslation('activate') : getTranslation('deactivate')} {getTranslation('btnText')}</button>
           </div>
         </div>
 

@@ -1,6 +1,38 @@
 import '../styles/TopNav.css'
 
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect, useRef, useContext } from 'react'
+import { SPANISH, ENGLISH } from '../App'
+import { useLanguage } from '../customHooks/useLanguageHook'
+import { LanguageContext } from './Context/LanguageContext'
+
+const LanguageResources = {
+  SPANISH: {
+    presentation: 'Presentación',
+    aboutMe: 'Sobre Mi',
+    CV: 'CV',
+    studies: 'Estudios',
+    jobs: 'Trabajos',
+    skills: 'Habilidades',
+    projects: 'Proyectos',
+    code: 'Código',
+    contact: 'Contacto',
+    react: 'Mi primer proyecto en REACT.JS',
+    sidenav: 'Click acá para cerrar el menú lateral'
+  },
+  ENGLISH: {
+    presentation: 'Presentation',
+    aboutMe: 'About Me',
+    CV: 'CV',
+    studies: 'Studies',
+    jobs: 'Jobs',
+    skills: 'Skills',
+    projects: 'Projects',
+    code: 'Code',
+    contact: 'Contact',
+    react: 'My first REACT.JS project',
+    sidenav: 'Click here to close side menu'
+  }
+}
 
 // eslint-disable-next-line react/prop-types
 function TopNav({ updateToggleSlider }) {
@@ -48,13 +80,12 @@ function TopNav({ updateToggleSlider }) {
       size of +20 cards off screen, idk why this happens but preventing default event from anchors
       and using it with timeouts while slider is off works well :D
 
-      If you have a better solution please share it! I would appreciate it
+      If you have a better solution please share it! I would appreciate it 😊👌
     */
 
     setTimeout(() => {
       window.location.href = href
     }, 50)
-
 
     timeoutRef.current = setTimeout(() => {
       updateToggleSlider(true)
@@ -62,24 +93,33 @@ function TopNav({ updateToggleSlider }) {
     }, 750)
   }
 
+  const useLanguageContext = useContext(LanguageContext)
+  const { getTranslation } = useLanguage(LanguageResources, useLanguageContext.selectedLanguage)
+
+  const handleClick3 = () => {
+    useLanguageContext.setSelectedLanguage((prevLanguage) => (prevLanguage === SPANISH ? ENGLISH : SPANISH))
+    closeNav()
+  }
+
   return (
     <>
       <div className="header sidenav" id="sidenav">
-        <a href='#presentation' onClick={(e) => handleClick2(e, '#presentation')}>Presentación</a>
-        <a href='#aboutMe' onClick={(e) => handleClick2(e, '#aboutMe')}>Sobre Mi</a>
-        <a href='#CV' onClick={(e) => handleClick2(e, '#CV')}>CV</a>
-        <a href='#studies' onClick={(e) => handleClick2(e, '#studies')}>Estudios</a>
-        <a href='#jobs' onClick={(e) => handleClick2(e, '#jobs')}>Trabajos</a>
-        <a href='#skills' onClick={(e) => handleClick2(e, '#skills')}>Habilidades</a>
-        <a href='#projects' onClick={(e) => handleClick2(e, '#projects')}>Proyectos</a>
-        <a href='#code' onClick={(e) => handleClick2(e, '#code')}>Código</a>
-        <a href='#contact' onClick={(e) => handleClick2(e, '#contact')}>Contacto</a>
+        <a href='#presentation' onClick={(e) => handleClick2(e, '#presentation')}>{getTranslation('presentation')}</a>
+        <a href='#aboutMe' onClick={(e) => handleClick2(e, '#aboutMe')}>{getTranslation('aboutMe')}</a>
+        <a href='#CV' onClick={(e) => handleClick2(e, '#CV')}>{getTranslation('CV')}</a>
+        <a href='#studies' onClick={(e) => handleClick2(e, '#studies')}>{getTranslation('studies')}</a>
+        <a href='#jobs' onClick={(e) => handleClick2(e, '#jobs')}>{getTranslation('jobs')}</a>
+        <a href='#skills' onClick={(e) => handleClick2(e, '#skills')}>{getTranslation('skills')}</a>
+        <a href='#projects' onClick={(e) => handleClick2(e, '#projects')}>{getTranslation('projects')}</a>
+        <a href='#code' onClick={(e) => handleClick2(e, '#code')}>{getTranslation('code')}</a>
+        <a href='#contact' onClick={(e) => handleClick2(e, '#contact')}>{getTranslation('contact')}</a>
+        <a onClick={handleClick3} style={{ userSelect: 'none' }}>{useLanguageContext.selectedLanguage}</a>
 
         <div className='sideNav-div bottom' ref={sideNavRef}>
           <p>Portfolio - React APP</p>
-          <p>My first React.JS Project - 2024</p>
+          <p>{getTranslation('react')} - 2024</p>
         </div>
-      </div>
+      </div >
 
       <div className="container change" id='menuIcon' onClick={handleClick} ref={menuIconRef}>
         <div className="bar1"></div>
@@ -88,7 +128,7 @@ function TopNav({ updateToggleSlider }) {
       </div>
 
       <div className='div-overlay' ref={divOverlay} onClick={closeNav}>
-        <strong>Click here to close SideNav</strong>
+        <strong>{getTranslation('sidenav')}</strong>
       </div>
     </>
   )

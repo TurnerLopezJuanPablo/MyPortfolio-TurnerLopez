@@ -20,7 +20,7 @@
     margin: 1.5rem 0;
 }
 
-input[type="checkbox"] {
+.checkbox-container input[type="checkbox"] {
     appearance: none;
     -webkit-appearance: none;
     -moz-appearance: none;
@@ -33,20 +33,20 @@ input[type="checkbox"] {
     transition: 300ms;
 }
 
-input[type="checkbox"]:checked {
+.checkbox-container input[type="checkbox"]:checked {
     background-color: #7660B5;
     border-color: #7660B5;
     transition: 300ms;
 }
 
-input[type="checkbox"]+label {
+.checkbox-container input[type="checkbox"]+label {
     cursor: pointer;
     margin: auto 0;
 
     user-select: none;
 }
 
-input[type="checkbox"]:checked::after {
+.checkbox-container input[type="checkbox"]:checked::after {
     content: "✔";
     position: absolute;
     font-size: 18px;

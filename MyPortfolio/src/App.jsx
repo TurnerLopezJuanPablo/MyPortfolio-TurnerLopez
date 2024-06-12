@@ -15,6 +15,9 @@ import { Code } from './Components/Code'
 import { Contact } from './Components/Contact'
 import { Footer } from './Components/Footer'
 
+export const SPANISH = 'Español';
+export const ENGLISH = 'English';
+
 function App() {
   const [hideTimeout, setHideTimeout] = useState(null)
 
