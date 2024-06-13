@@ -2,7 +2,10 @@ import '../styles/Scroller.scss'
 
 import Section from '../Components/MiniComponents/Section'
 
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState, useContext } from 'react'
+
+import { useLanguage } from '../customHooks/useLanguageHook'
+import { LanguageContext } from './Context/LanguageContext'
 
 // Skills icons imports - Skills icons imports - START
 import JavaScript from '../assets/skillsIcons/javascript.svg'
@@ -85,6 +88,21 @@ const ButtonToggleShowCards = ({ showCards, onClick }) => {
   )
 }
 
+const LanguageResources = {
+  SPANISH: {
+    title: 'Habilidades',
+    subtitle: "No es suficiente ser 'bueno' en programación, debes esforzarte por ser 'excelente'",
+    velocity: 'Velocidad',
+    skillsBottomText: 'Clickeando el botón de debajo podrás ver mis habilidades por separado',
+  },
+  ENGLISH: {
+    title: 'Skills',
+    subtitle: "It's not enough to be 'good' at programming, you must strive to be 'excellent'",
+    velocity: 'Velocity',
+    skillsBottomText: 'By clicking the button below, you can view my skills separately',
+  }
+}
+
 // eslint-disable-next-line react/prop-types
 export const Skills = ({ toggleSlider }) => {
   const scrollerRef = useRef(null)
@@ -151,9 +169,12 @@ export const Skills = ({ toggleSlider }) => {
     if (accordionRef.current) setAccHeight(accordionRef.current.scrollHeight)
   }, [newWidth])
 
+  const useLanguageContext = useContext(LanguageContext)
+  const { getTranslation } = useLanguage(LanguageResources, useLanguageContext.selectedLanguage)
+
   return (
-    <Section idSection="skills" title="Habilidades">
-      <p className='skills-subtitle'>{"No es suficiente ser 'bueno' en programación, debes esforzarte por ser 'excelente' 😉"}</p>
+    <Section idSection="skills" title={getTranslation('title')}>
+      <p className='skills-subtitle'>{getTranslation('subtitle')} 😉</p>
 
       <div className="skills-scroller" ref={scrollerRef} >
         <div className="skills-scroller__inner scroller__inner">
@@ -176,7 +197,7 @@ export const Skills = ({ toggleSlider }) => {
           <p style={{ userSelect: 'none' }}>|</p>
 
           <div className='slider-velocity-container'>
-            <p>Velocity: </p><span className='slider-velocity'>{velocity}</span>
+            <p>{getTranslation('velocity')}: </p><span className='slider-velocity'>{velocity}</span>
           </div>
         </div>
 
@@ -186,7 +207,7 @@ export const Skills = ({ toggleSlider }) => {
       </div>
 
       <article className="show-cards-container">
-        <p className='skills-subtitle'>Clickeando el botón de debajo podrás ver mis habilidades por separado 👌</p>
+        <p className='skills-subtitle'>{getTranslation('skillsBottomText')} 👌</p>
 
         <div>
           <ButtonToggleShowCards showCards={showCards} onClick={handleClick2} />

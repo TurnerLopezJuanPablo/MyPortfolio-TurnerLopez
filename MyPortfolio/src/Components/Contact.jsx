@@ -4,12 +4,43 @@ import LinkedInLogo from '../assets/icons8-linkedin-50.png'
 import WhatsAppLogo from '../assets/icons8-whatsapp-48.png'
 import EmailLogo from '../assets/icons8-email-48.png'
 
-import { useRef } from 'react'
+import { useRef, useContext } from 'react'
+
+import { useLanguage } from '../customHooks/useLanguageHook'
+import { LanguageContext } from './Context/LanguageContext'
+
+const LanguageResources = {
+  SPANISH: {
+    copyText: '¡Copiado al portapapeles!',
+    title: '¡Impulsa tus proyectos con mi ayuda!',
+    subtitle: 'Contacto',
+    name: 'Nombre',
+    email: 'Correo Electrónico',
+    msg: 'Mensaje',
+    sendMsg: 'Enviar Mensaje',
+    bottomText: 'Si tienes una idea o necesitas asesoramiento, no dudes en contactarme. Conecta conmigo a través de mis redes sociales o envíame un correo electrónico, los detalles están justo abajo.',
+    goToCV: 'Ir a Descargar mi CV',
+  },
+  ENGLISH: {
+    copyText: 'Copied to the clipboard!',
+    title: 'Boost your projects with my help!',
+    subtitle: 'Contact',
+    name: 'Name',
+    email: 'Email',
+    msg: 'Message',
+    sendMsg: 'Send Message',
+    bottomText: 'If you have an idea or need advice, do not hesitate to contact me. Connect with me through my social networks or send me an email, the details are just below.',
+    goToCV: 'Go to Download my CV',
+  }
+}
 
 export const Contact = () => {
+  const useLanguageContext = useContext(LanguageContext)
+  const { getTranslation } = useLanguage(LanguageResources, useLanguageContext.selectedLanguage)
+
   const whatsappTooltipRef = useRef(null)
   const emailTooltipRef = useRef(null)
-  const copyText = '¡Copiado al portapapeles!'
+  const copyText = getTranslation('copyText')
 
   const handleClick = (ref) => {
     if (ref.current) {
@@ -31,42 +62,38 @@ export const Contact = () => {
 
   return (
     <section id='contact' className="contact-container">
-      <h2 className='title' style={{marginBottom: '3rem'}}>¡Impulsa tus proyectos con mi ayuda!</h2>
+      <h2 className='title' style={{ marginBottom: '3rem' }}>{getTranslation('title')}</h2>
 
       <div className="form-container card">
-        <h2>Contacto</h2>
+        <h2>{getTranslation('subtitle')}</h2>
         <form name='contact' method="POST" data-netlify="true">
           <input type="hidden" name="form-name" value="contact" id='form-hidden-name' />
 
           <div className="form-group">
-            <label htmlFor="name">Nombre:</label>
+            <label htmlFor="name">{getTranslation('name')}:</label>
             <input type="text" id="name" name="name" required autoComplete='true' />
           </div>
 
           <div className="form-group">
-            <label htmlFor="email">Correo Electrónico:</label>
+            <label htmlFor="email">{getTranslation('email')}:</label>
             <input type="email" id="email" name="email" required autoComplete='true' />
           </div>
 
           <div className="form-group">
-            <label htmlFor="message">Mensaje:</label>
+            <label htmlFor="message">{getTranslation('msg')}:</label>
             <textarea id="message" name="message" rows="5" required autoComplete='false'></textarea>
           </div>
 
           <div className="form-group">
-            <button type="submit">Enviar mensaje</button>
+            <button type="submit">{getTranslation('sendMsg')}</button>
           </div>
         </form>
       </div>
 
-      <h3>
-        Si tenes una idea o necesitas asesoramiento, no dudes en contactarme.
-        Conecta conmigo a través de mis redes sociales o envíame un correo electrónico,
-        los detalles están justo abajo.
-      </h3>
+      <h3>{getTranslation('bottomText')}</h3>
 
       <div className='link-CV-Container'>
-        <a href='#CV'>Ir a Descargar mi CV</a>
+        <a href='#CV'>{getTranslation('goToCV')}</a>
       </div>
 
       <div className="contact-container-fotos">

@@ -1,7 +1,21 @@
 import '../styles/Footer.css'
 import emoji from '../assets/emoji.png'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useContext } from 'react'
+
+import { useLanguage } from '../customHooks/useLanguageHook'
+import { LanguageContext } from './Context/LanguageContext'
+
+const LanguageResources = {
+    SPANISH: {
+        timePassed: 'Tiempo total pasado: ',
+        myRights: ' Todos los derechos reservados',
+    },
+    ENGLISH: {
+        timePassed: 'Total time passed: ',
+        myRights: ' All rights reserved',
+    }
+}
 
 export const Footer = () => {
     const initialCount = parseInt(localStorage.getItem('timeSpentOnPage') || '0', 10)
@@ -27,10 +41,13 @@ export const Footer = () => {
         return `${hrs.toString().padStart(2, '0')}:${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`
     }
 
+    const useLanguageContext = useContext(LanguageContext)
+    const { getTranslation } = useLanguage(LanguageResources, useLanguageContext.selectedLanguage)
+
     return (
         <footer>
             <article className='footer-article'>
-                <p>Tiempo total pasado: </p>
+                <p>{getTranslation('timePassed')}</p>
                 <span className='footer-styled'>{formatTime(count)}</span>
             </article>
 
@@ -42,7 +59,7 @@ export const Footer = () => {
 
                     <div className="footer-text">
                         <p>Turner Lopez, Juan Pablo</p>
-                        <p>&copy; {new Date().getFullYear()} Todos los derechos reservados</p>
+                        <p>&copy; {new Date().getFullYear()} {getTranslation('myRights')}</p>
                     </div>
                 </div>
             </section>

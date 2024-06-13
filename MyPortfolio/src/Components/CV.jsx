@@ -4,10 +4,32 @@ import Section from './MiniComponents/Section'
 import JSConfetti from 'js-confetti'
 import DownloadIcon from '../assets/icons8-descargar-48.png'
 
+import { useLanguage } from '../customHooks/useLanguageHook'
+import { LanguageContext } from './Context/LanguageContext'
+
+const LanguageResources = {
+    SPANISH: {
+        download: 'Descargar',
+        size: 'Tamaño',
+        titleModal: '¡Gracias por descargar mi CV!',
+        textModal: 'Espero que encuentres la información útil. Si tienes alguna pregunta o deseas discutir oportunidades de colaboración, no dudes en contactarme.',
+        thanksModal: '¡Saludos cordiales!',
+        closeModal: 'Click para cerrar el modal',
+    },
+    ENGLISH: {
+        download: 'Download',
+        size: 'Size',
+        titleModal: 'Thank you for downloading my CV!',
+        textModal: 'I hope you find the information useful. If you have any questions or wish to discuss collaboration opportunities, please do not hesitate to contact me.',
+        thanksModal: 'Best regards!',
+        closeModal: 'Click to close the modal',
+    }
+}
+
 // CV 
 import cvPdf from '../../CV/CV - TurnerLopez JuanPablo.pdf'
 
-import { useRef } from 'react'
+import { useRef, useContext } from 'react'
 
 export const CV = () => {
     const modalRef = useRef(null)
@@ -57,17 +79,20 @@ export const CV = () => {
         document.body.removeChild(link)
     }
 
+    const useLanguageContext = useContext(LanguageContext)
+    const { getTranslation } = useLanguage(LanguageResources, useLanguageContext.selectedLanguage)
+
     return (
         <Section idSection='CV' title='Curriculum Vitae'>
             <div className='CV'>
                 <button onClick={handleClick}>
                     <span>
                         <img src={DownloadIcon} alt='Download Icon' />
-                        Descargar CV
+                        {getTranslation('download')} CV
                     </span>
                 </button>
 
-                <p style={{ fontStyle: 'italic', marginBottom: '0' }}>Tamaño: 1MB</p>
+                <p style={{ fontStyle: 'italic', marginBottom: '0' }}>{getTranslation('size')}: 1MB</p>
             </div>
 
             {/* MODAL */}
@@ -76,11 +101,11 @@ export const CV = () => {
 
                 <div className='modal' ref={modalRef}>
                     <div className='modal-content'>
-                        <p>¡Gracias por descargar mi CV!</p>
-                        <p>Espero que encuentres la información útil. Si tienes alguna pregunta o deseas discutir oportunidades de colaboración, no dudes en contactarme.</p>
-                        <p>¡Saludos cordiales!</p>
+                        <p>{getTranslation('titleModal')}</p>
+                        <p>{getTranslation('textModal')}</p>
+                        <p>{getTranslation('thanksModal')}</p>
                         <p style={{ textAlign: 'end' }}>Turner Lopez, Juan Pablo 😉👌</p>
-                        <p className='modal-last-p'>Click para cerrar el modal</p>
+                        <p className='modal-last-p'>{getTranslation('closeModal')}</p>
                     </div>
                 </div>
             </section>
