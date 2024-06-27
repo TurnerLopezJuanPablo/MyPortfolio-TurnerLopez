@@ -34,7 +34,7 @@ const LanguageResources = {
   }
 }
 
-export const Contact = () => {
+export const Contact = ({ updateToggleSlider }) => {
   const useLanguageContext = useContext(LanguageContext)
   const { getTranslation } = useLanguage(LanguageResources, useLanguageContext.selectedLanguage)
 
@@ -58,6 +58,36 @@ export const Contact = () => {
         console.error('Failed to copy: ', err)
       })
     }
+  }
+
+  const timeoutRef = useRef(null)
+
+  const handleClick2 = (e, href) => {
+    e.preventDefault()
+
+    updateToggleSlider(false)
+
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current)
+    }
+
+    /* 
+      If you are here it is because you notice that when you click on an anchor the skills slider
+      stops for around a second (exactly 750ms), well... skills cards overflow makes anchors to fail due to its 
+      size of +20 cards off screen, idk why this happens but preventing default event from anchors
+      and using it with timeouts while slider is off works well :D
+
+      If you have a better solution please share it! I would appreciate it 😊👌
+    */
+
+    setTimeout(() => {
+      window.location.href = href
+    }, 50)
+
+    timeoutRef.current = setTimeout(() => {
+      updateToggleSlider(true)
+      timeoutRef.current = null
+    }, 750)
   }
 
   return (
@@ -93,7 +123,7 @@ export const Contact = () => {
       <h3>{getTranslation('bottomText')}</h3>
 
       <div className='link-CV-Container'>
-        <a href='#CV'>{getTranslation('goToCV')}</a>
+        <a href='#CV' onClick={(e) => handleClick2(e, '#CV')}>{getTranslation('goToCV')}</a>
       </div>
 
       <div className="contact-container-fotos">

@@ -111,7 +111,7 @@ function App() {
           <Code />
           <hr></hr>
 
-          <Contact />
+          <Contact updateToggleSlider={setToggleSlider}/>
         </main>
 
         <button onClick={topFunction} id="myBtn" title="Go to top">↑</button>

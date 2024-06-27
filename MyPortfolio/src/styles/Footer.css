@@ -42,6 +42,14 @@
     margin-bottom: 1rem !important;
 }
 
+.footer-article-2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin-top: 2rem !important;
+}
+
 .footer-styled {
     background: #9775fa;
     border-radius: 10px;
@@ -50,6 +58,17 @@
     color: white;
     font-weight: bold;
     padding: 0.3rem 0.7rem;
+}
+
+.show-number {
+    text-align: center;
+    border: 1px;
+    background: #7660b5;
+    width: 26px;
+    height: 22px;
+    border-radius: 3px;
+    padding: 2px 4px;
+    margin: 0 2px;
 }
 
 @keyframes rotation360 {
@@ -80,4 +99,14 @@
         margin-top: 1rem;
         margin-bottom: 4rem;
     }
+}
+
+@media screen and (max-width: 350px) {
+    .footer-article-2 p {
+        font-size: 0.85rem;
+    }
+}
+
+.footer-article-2 p {
+    transition: 300ms;
 }
