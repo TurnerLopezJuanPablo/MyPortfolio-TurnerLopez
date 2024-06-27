@@ -6,8 +6,7 @@ import { useState, useEffect, useContext } from 'react'
 import { useLanguage } from '../customHooks/useLanguageHook'
 import { LanguageContext } from './Context/LanguageContext'
 
-const API_URL = import.meta.env.VITE_API_URL
-const url = new URL(API_URL)
+const url = new URL('https://667a1e0d18a459f63952629e.mockapi.io/portfolioTurnerJP/UserValoration')
 
 const LanguageResources = {
     SPANISH: {
@@ -22,7 +21,6 @@ const LanguageResources = {
         likesMessage: ' people liked the page',
     }
 };
-
 
 import '../styles/HeartButton.scss'
 

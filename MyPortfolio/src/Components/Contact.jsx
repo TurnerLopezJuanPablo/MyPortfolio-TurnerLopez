@@ -34,6 +34,7 @@ const LanguageResources = {
   }
 }
 
+// eslint-disable-next-line react/prop-types
 export const Contact = ({ updateToggleSlider }) => {
   const useLanguageContext = useContext(LanguageContext)
   const { getTranslation } = useLanguage(LanguageResources, useLanguageContext.selectedLanguage)
