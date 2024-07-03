@@ -18,6 +18,10 @@
     text-align: justify;
 }
 
+.card h2 {
+    font-size: 1.8rem;
+}
+
 .form-container {
     max-width: 600px;
     margin: 0 auto;
@@ -80,6 +84,8 @@
     background-color: #8A6BE3;
 
     transition: 300ms;
+
+    transform: scale(1.05) !important;
 }
 
 .contact-container-fotos {
