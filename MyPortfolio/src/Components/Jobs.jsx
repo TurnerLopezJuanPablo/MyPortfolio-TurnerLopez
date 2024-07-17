@@ -7,7 +7,7 @@ import { LanguageContext } from './Context/LanguageContext'
 const LanguageResources = {
   SPANISH: {
     title: 'Trabajos',
-    text: 'No mucho que poner acá pero puede ayudarme a expandir esta sección si lo deseas... '
+    text: 'No mucho que poner acá pero pueden ayudarme a expandir esta sección si lo deseas... '
   },
   ENGLISH: {
     title: 'Jobs',
