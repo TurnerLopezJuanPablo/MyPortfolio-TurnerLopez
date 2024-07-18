@@ -10,7 +10,5 @@ export const useLanguage = (initialLanguageResources, selectedLanguage) => {
         else return languageResources.ENGLISH[key]
     }
 
-    return {
-        getTranslation
-    }
+    return getTranslation
 }
