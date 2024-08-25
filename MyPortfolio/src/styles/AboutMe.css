@@ -26,31 +26,30 @@
     color: #9775FA;
 }
 
-.aboutMe-color-1.hover {
-    filter: drop-shadow(0 0 10px #9775FA);
-}
-
 .aboutMe-color-2 {
     color: #69DB7C;
-}
-
-.aboutMe-color-2.hover {
-    filter: drop-shadow(0 0 10px #69db7c);
 }
 
 .aboutMe-color-3 {
     color: #FFD43B;
 }
 
-.aboutMe-color-3.hover {
-    filter: drop-shadow(0 0 10px #ffd53b);
+.aboutMe-color-1.hover1 {
+    filter: drop-shadow(0 0 10px #9775FA);
+}
+
+.aboutMe-color-2.hover2 {
+    filter: drop-shadow(0 0 10px #69DB7C);
+}
+
+.aboutMe-color-3.hover3 {
+    filter: drop-shadow(0 0 10px #FFD43B);
 }
 
 .aboutMe-color-1,
 .aboutMe-color-2,
-.aboutMe-color-3,
-.hover {
-    transition: 200ms;
+.aboutMe-color-3 {
+    transition: 300ms;
     font-weight: 600;
 }
 
