@@ -11,28 +11,28 @@ import MyPhoto from '../assets/MyPhoto.jpg'
 const LanguageResources = {
   SPANISH: {
     title: 'Sobre mí',
-    paragraph1: "Recientemente graduado como <span class='aboutMe-color-1'>Analista de Sistemas</span> en el Instituto Tecnológico O.R.T. Me especializo en el área de desarrollo tanto como <span class='aboutMe-color-2'>Front-End</span> con <span class='aboutMe-color-2'>Vue.JS</span> como principal tecnología, o como <span class='aboutMe-color-2'>Back-End</span> con <span class='aboutMe-color-2'>Node.JS, Express, Java o Asp.Net Core.</span>",
-    paragraph2: "Como proyecto final de la carrera de sistemas, con mi equipo, <span class='aboutMe-color-1'>desarrollamos un software para el Club Macabi</span> el cual consistió en una aplicación para que los profesores del club pudieran hacer un mejor seguimiento de sus alumnos en trabajos como la asistencia, entrenamientos, torneos o acceder a los datos personales de estos de ser necesario. He realizado <span class='aboutMe-color-1'>cursos y proyectos personales</span> sobre tecnologías web modernas, lo que me ha permitido ganar experiencia en varios lenguajes de programación.",
-    paragraph3: "Hoy me encuentro en búsqueda de mi primer empleo en el área de TI, estoy constantemente aprendiendo sobre nuevas tecnologías. Soy una persona <span class='aboutMe-color-3'>responsable, ordenada</span> y estoy siempre dispuesto a <span class='aboutMe-color-3'>aprender</span> cosas nuevas que me ayuden a formarme como un mejor profesional. Actualmente estoy cursando una <span class='aboutMe-color-1'>Diplomatura en Bases de Datos</span> en <span class='aboutMe-color-1'>UTN</span> con finalización a mediados de julio.",
-    listItem1: 'Estudios y Proyectos',
-    listItem2: 'Lenguajes y Tecnologías',
-    listItem3: 'Mis Aptitudes'
+    paragraph1: "Graduado como <span class='aboutMe-color-1'>Analista de Sistemas</span> en el Instituto Tecnológico O.R.T. Me especializo en el área de desarrollo tanto como <span class='aboutMe-color-2'>Front-End</span> con <span class='aboutMe-color-2'>Vue.JS</span> como principal tecnología, <span class='aboutMe-color-2'>React.JS</span>, o como <span class='aboutMe-color-2'>Back-End</span> con tecnologías como <span class='aboutMe-color-2'>Node.JS, Express, Java o Asp.Net Core.</span>",
+    paragraph2: "He realizado cursos y proyectos personales sobre <span class='aboutMe-color-2'>Tecnologías Web Modernas</span>, lo que me ha permitido ganar <span class='aboutMe-color-3'>experiencia</span> en varios lenguajes de programación y tecnologías como las mencionadas anteriormente, y quiero destacar mis estudios en <span class='aboutMe-color-1'>UTN</span> con la <span class='aboutMe-color-1'>Diplomatura en Bases de Datos</span> que he realizado y terminado de manera satisfactoria.  Soy una persona <span class='aboutMe-color-3'>responsable, ordenada</span> y estoy siempre dispuesto a <span class='aboutMe-color-3'>aprender</span> cosas nuevas que me ayuden a formarme como un mejor profesional.",
+    paragraph3: "Actualmente me encuentro trabajando en el <span class='aboutMe-color-1'>Centro de Capitanes de Ultramar y Oficiales de Marina Mercante (CCUOMM)</span> en el área de <span class='aboutMe-color-1'>Soporte Técnico interno</span>, encargándome del <span class='aboutMe-color-3'>mantenimiento, optimización y reparación de equipos informáticos.</span> Mis responsabilidades incluyen la <span class='aboutMe-color-2'>resolución de problemas técnicos, la implementación de actualizaciones de software, la configuración de redes y tecnologías.</span>",
+    listItem1: 'Formación y Experiencia',
+    listItem2: 'Habilidades y Tecnologías',
+    listItem3: 'Cualidades y Aptitudes'
   },
   ENGLISH: {
     title: 'About Me',
-    paragraph1: "Recently graduated as a <span class='aboutMe-color-1'>Systems Analyst</span> from the Instituto Tecnológico O.R.T. I specialize in development both as a <span class='aboutMe-color-2'>Front-End</span> with <span class='aboutMe-color-2'>Vue.JS</span> as the main technology, and as a <span class='aboutMe-color-2'>Back-End</span> with <span class='aboutMe-color-2'>Node.JS, Express, Java or Asp.Net Core</span>.",
-    paragraph2: "As a final project for my systems career, my team and I <span class='aboutMe-color-1'>developed a software for the Macabi Club</span>, which consisted of an application for the club teachers to have better track of their students' work such as attendance, training, tournaments, or accessing their personal data if needed. I have taken <span class='aboutMe-color-1'>courses and made personal projects</span> on modern web technologies, which has allowed me to gain experience in various programming languages.",
-    paragraph3: "Today I am looking for my first job in the IT field, I am constantly learning about new technologies. I am a <span class='aboutMe-color-3'>responsible, organized</span> person and I am always willing to <span class='aboutMe-color-3'>learn</span> new things that help me become a better professional. I am currently taking a <span class='aboutMe-color-1'>Diploma in Databases</span> at <span class='aboutMe-color-1'>UTN</span> with completion expected by mid-July.",
+    paragraph1: "Graduated as a <span class='aboutMe-color-1'>Systems Analyst</span> from the Instituto Tecnológico O.R.T. I specialize in development both as a <span class='aboutMe-color-2'>Front-End</span> with <span class='aboutMe-color-2'>Vue.JS</span> as the main technology, <span class='aboutMe-color-2'>React.JS</span>, and as a <span class='aboutMe-color-2'>Back-End</span> with technologies such as <span class='aboutMe-color-2'>Node.JS, Express, Java, or Asp.Net Core.</span>",
+    paragraph2: "I have completed courses and personal projects on <span class='aboutMe-color-2'>Modern Web Technologies</span>, which has allowed me to gain <span class='aboutMe-color-3'>experience</span> in various programming languages and technologies mentioned above. I also want to highlight my studies at <span class='aboutMe-color-1'>UTN</span> with the <span class='aboutMe-color-1'>Diploma in Databases</span> that I have completed successfully. I am a <span class='aboutMe-color-3'>responsible and organized</span> person, always willing to <span class='aboutMe-color-3'>learn</span> new things that help me grow as a better professional.",
+    paragraph3: "I am currently working at the <span class='aboutMe-color-1'>Centro de Capitanes de Ultramar y Oficiales de Marina Mercante (CCUOMM)</span> in the <span class='aboutMe-color-1'>Internal Technical Support</span> area, handling <span class='aboutMe-color-3'>maintenance, optimization, and repair of computer equipment.</span> My responsibilities include <span class='aboutMe-color-2'>troubleshooting technical issues, implementing software updates, and configuring networks and technologies.</span>",
     listItem1: 'Studies and Projects',
     listItem2: 'Languages and Technologies',
-    listItem3: 'My Skills'
+    listItem3: 'Skills and Attributes'
   }
 }
 
 export const AboutMe = () => {
   const useLanguageContext = useContext(LanguageContext)
   const { getTranslation } = useLanguage(LanguageResources, useLanguageContext.selectedLanguage)
-  
+
   const aboutMeDiv = useRef(null)
   const [colorElements, setColorElements] = useState({
     color1: [],
