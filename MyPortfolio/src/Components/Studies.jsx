@@ -29,7 +29,7 @@ const LanguageResources = {
 
     UtnTitle: 'Diplomatura en Bases de Datos',
     UtnSchool: 'UTN - Universidad Tecnológica Nacional - Curso',
-    UtnTime: 'Mayo - Julio (3 meses - 2024) - Cursando',
+    UtnTime: 'Mayo - Julio (3 meses - 2024) - Finalizado',
     UtnText: 'Al finalizar mi carrera, me lleve conmigo toda la teoría en Base de Datos, y mucha práctica, por lo que, con las habilidades conseguidas, decidí mejorar mis conocimientos en esa área. Fue entonces cuando encontré la Diplomatura en Base de Datos, que me brindó la posibilidad de conocer más motores de bases de datos y sus diferencias, aprendí también a optimizar consultas y que sean más complejas, y hacer un buen uso de las transacciones.',
 
     SfsTitle: 'Bachillerato en Artes Visuales',
@@ -51,7 +51,7 @@ const LanguageResources = {
 
     UtnTitle: 'Diploma in Databases',
     UtnSchool: 'UTN - National Technological University - Course',
-    UtnTime: 'May - July (3 months - 2024) - Currently Studying',
+    UtnTime: 'May - July (3 months - 2024) - Completed',
     UtnText: 'After finishing my degree, I took with me all the theory in Databases, and a lot of practice, so with the skills acquired, I decided to improve my knowledge in that area. It was then that I found the Diploma in Databases, which gave me the opportunity to learn about more database engines and their differences, I also learned to optimize queries to make them more complex, and to make good use of transactions.',
 
     SfsTitle: 'High School Diploma in Visual Arts',
